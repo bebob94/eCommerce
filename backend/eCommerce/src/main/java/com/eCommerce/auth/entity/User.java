@@ -30,7 +30,6 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String surname;
     private String image;
     @OneToOne
     private Address address;
@@ -40,8 +39,7 @@ public class User {
     private String email;
     @Column(nullable = false)
     private String password;
-    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
-    private List<Order> orders;
+   
     
     // Il caricamento EAGER delle raccolte significa che vengono recuperate 
     // completamente nel momento in cui viene recuperato il loro genitore

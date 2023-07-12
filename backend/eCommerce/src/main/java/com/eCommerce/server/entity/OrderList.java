@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import com.eCommerce.auth.entity.User;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -30,8 +31,12 @@ public class OrderList {
 	private double totalPrice;
 	private OrderStatus orderStatus;
 	
+	@ManyToOne
+	@JsonIgnoreProperties
+	private Address address;
+	
 	@OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-	private List<Order> orders;
+	private List<MyOrder> orders;
 	
 	@ManyToOne
 	private ShippingMethod shippingMethod;

@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Set;
 
 import com.eCommerce.server.entity.Address;
-import com.eCommerce.server.entity.Order;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
 
@@ -40,6 +40,13 @@ public class User {
     @Column(nullable = false)
     private String password;
    
+    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinTable(name = "users_address",
+    joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+    inverseJoinColumns = @JoinColumn(name = "address_id", referencedColumnName = "id")
+)	@JsonIgnoreProperties(value = "users")
+    private List<Address>addresses;
+    
     
     // Il caricamento EAGER delle raccolte significa che vengono recuperate 
     // completamente nel momento in cui viene recuperato il loro genitore
@@ -49,4 +56,7 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
     )
     private Set<Role> roles = new HashSet<>();
+    
+    
+    
 }

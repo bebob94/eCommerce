@@ -11,7 +11,7 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 @Entity
-public class Order {
+public class MyOrder {
 	   
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

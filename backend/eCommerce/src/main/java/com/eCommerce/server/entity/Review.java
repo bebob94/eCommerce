@@ -1,12 +1,15 @@
 package com.eCommerce.server.entity;
 
+import java.time.LocalDate;
 import java.util.List;
+
+import com.eCommerce.auth.entity.User;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,19 +22,17 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @Entity
-public class Product {
+public class Review {
 	
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-	private String name;
-	private String description;
-	private Double price;
-	private Long quantity;
-	private Category category;
-	private String image;
-	
-	@OneToMany(mappedBy = "product")
-	private List<Review> review;
+	 @Id
+	 @GeneratedValue(strategy = GenerationType.IDENTITY)
+	 private Long id;
+	 @ManyToOne
+	 private User user;
+	 @ManyToOne
+	 private Product product;
+	 private String comment;
+	 private LocalDate published;
+	 private int valutation;
 
 }

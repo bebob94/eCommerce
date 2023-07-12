@@ -35,8 +35,8 @@ public class AddressService {
 		a.setHouseNumber(address.getHouseNumber());
 		a.setCap(address.getCap());
 		addressRepo.save(a);
-		if (!u.getAddresses().contains(a)) {
-			u.getAddresses().add(a);
+		if (!u.getAddress().contains(a)) {
+			u.getAddress().add(a);
 			a.getUsers().add(u);
 			userRepo.save(u);
 		}

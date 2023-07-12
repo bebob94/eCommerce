@@ -1,5 +1,7 @@
 package com.eCommerce.server.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,6 +37,11 @@ public class ProductService {
 		}else {
 			return productRepo.findById(id).get();
 		}
+	}
+	
+//	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< CERCA TUTTI I PRODUCT>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	public List<Product> findAllProducts() {
+		return (List<Product>) productRepo.findAll();
 	}
 	
 //	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< MODIFICA PRODUCT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>	

@@ -20,7 +20,6 @@ import com.eCommerce.server.repository.AddressRepository;
 import com.eCommerce.server.repository.MyOrderRepository;
 import com.eCommerce.server.repository.OrderListRepository;
 import com.eCommerce.server.repository.PaymentRepository;
-import com.eCommerce.server.repository.ShippingMethodRepository;
 
 @Service
 public class OrderListService {
@@ -38,9 +37,6 @@ public class OrderListService {
 	OrderListRepository OrderListRepo;
 	
 	@Autowired
-	ShippingMethodRepository shippingMethodRepo;
-	
-	@Autowired
 	PaymentRepository paymentRepo;
 	
 	@Autowired
@@ -55,7 +51,6 @@ public String createOrderList(OrderListDto orderList, Long user_id) {
 	ol.setInitializedOrder(LocalDate.now());
 	ol.setAddress(orderList.getAddress());
 	ol.setOrderStatus(OrderStatus.CONFIRMED);
-	ol.setShippingMethod(orderList.getShippingMethod());
 	
 	//ORDERLIST
 	Set<MyOrder> uniqueOrder= new HashSet<>(orderList.getOrders());

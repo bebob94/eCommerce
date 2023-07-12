@@ -12,5 +12,4 @@ public interface OrderListRepository extends JpaRepository<OrderList, Long>{
 	List<OrderList> findDistinctByUserId(Long userId);
 	List<OrderList> findByOrderStatus(OrderStatus orderStatus);
 	List<OrderList> findByInitializedOrder(LocalDate initializedOrder);
-	List<OrderList> findByScheduledDelivery(LocalDate scheduledDelivery);
 }

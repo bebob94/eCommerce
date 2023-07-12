@@ -2,6 +2,8 @@ package com.eCommerce.server.entity;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -30,7 +32,7 @@ public class Product {
 	private Long quantity;
 	private Category category;
 	private String image;
-	
+	@JsonIgnoreProperties(value = "product")
 	@OneToMany(mappedBy = "product")
 	private List<Review> review;
 

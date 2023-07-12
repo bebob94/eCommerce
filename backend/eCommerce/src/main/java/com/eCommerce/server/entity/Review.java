@@ -1,7 +1,6 @@
 package com.eCommerce.server.entity;
 
 import java.time.LocalDate;
-import java.util.List;
 
 import com.eCommerce.auth.entity.User;
 

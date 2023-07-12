@@ -2,6 +2,8 @@ package com.eCommerce.server.entity;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,7 +25,7 @@ public class Payment {
 	private String provider;
 	private LocalDate create_time;
 	private String status;
-	
+	@JsonIgnoreProperties(value = "payment")
 	@ManyToOne
 	private OrderList OrderList;
 }

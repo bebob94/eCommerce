@@ -24,23 +24,21 @@ public class OrderList {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-	@ManyToOne
-	private User user;
 	private LocalDate initializedOrder;
-	private LocalDate scheduledDelivery;
 	private double totalPrice;
 	private OrderStatus orderStatus;
+	@ManyToOne
+	private User user;
 	
 	@ManyToOne
 	@JsonIgnoreProperties
 	private Address address;
 	
+	@JsonIgnoreProperties(value = "OrderList")
 	@OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 	private List<MyOrder> orders;
 	
-	@ManyToOne
-	private ShippingMethod shippingMethod;
-	
+	@JsonIgnoreProperties(value = "OrderList")
 	@OneToMany(mappedBy = "OrderList")
 	private List<Payment> payment;
 }

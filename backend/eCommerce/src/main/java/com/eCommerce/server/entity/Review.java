@@ -32,7 +32,7 @@ public class Review {
 	 @ManyToOne
 	 private Product product;
 	 private String comment;
-	 private LocalDate published;
 	 private int valutation;
+	 private LocalDate published;
 
 }

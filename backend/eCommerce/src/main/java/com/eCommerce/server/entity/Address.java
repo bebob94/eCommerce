@@ -19,7 +19,6 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @Entity
-@Table(name="address")
 public class Address {
 
 

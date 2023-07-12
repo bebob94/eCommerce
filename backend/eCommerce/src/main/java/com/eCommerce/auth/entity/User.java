@@ -31,8 +31,6 @@ public class User {
     private Long id;
     private String name;
     private String image;
-    @OneToOne
-    private Address address;
     @Column(nullable = false, unique = true)
     private String username;
     @Column(nullable = false, unique = true)
@@ -45,7 +43,7 @@ public class User {
     joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
     inverseJoinColumns = @JoinColumn(name = "address_id", referencedColumnName = "id")
 )	@JsonIgnoreProperties(value = "users")
-    private List<Address>addresses;
+    private List<Address>address;
     
     
     // Il caricamento EAGER delle raccolte significa che vengono recuperate 

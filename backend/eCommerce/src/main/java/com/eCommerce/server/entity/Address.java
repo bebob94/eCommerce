@@ -1,6 +1,11 @@
 package com.eCommerce.server.entity;
 
 
+import java.util.List;
+
+import com.eCommerce.auth.entity.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,5 +32,9 @@ public class Address {
     private String region;
     private Long houseNumber;
     private String cap;
+    
+    @JsonIgnore
+	@ManyToMany(mappedBy = "address")
+	private List<User> users;
 	
 }

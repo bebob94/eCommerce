@@ -23,7 +23,7 @@ public class AddressService {
 	
 	
 	
-//	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< CREA INDIRIZZO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< CREA ADDRESS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 	public String createAddress(AddressDto address, Long userId) {
 		User u = userRepo.findById(userId).get();
 		Address a= new Address();
@@ -51,7 +51,7 @@ public class AddressService {
 		}
 	}
 	
-//	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< MODIFICA INDIRIZZO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< MODIFICA ADDRESS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 	public Address updateAddress(Address a) {
 		if(!addressRepo.existsById(a.getId())) {
 			throw new EntityNotFoundException("Address not exists!!!");
@@ -61,7 +61,7 @@ public class AddressService {
 		}
 	}
 
-//	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< RIMUOVI INDIRIZZO PER ID >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< RIMUOVI ADDRESS PER ID >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 	public String removeAddressById(Long id) {
 		if (!addressRepo.existsById(id)) {
 			throw new EntityNotFoundException("Address not exists!!!");

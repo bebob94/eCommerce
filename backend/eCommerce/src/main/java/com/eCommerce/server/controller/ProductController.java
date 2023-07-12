@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.eCommerce.server.entity.Address;
 import com.eCommerce.server.entity.Product;
 import com.eCommerce.server.payload.productDto;
 import com.eCommerce.server.service.ProductService;

@@ -5,6 +5,8 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -30,6 +32,7 @@ public class Product {
 	private String description;
 	private Double price;
 	private Long quantity;
+	@Enumerated(EnumType.STRING)
 	private Category category;
 	private String image;
 	@JsonIgnoreProperties(value = "product")

@@ -15,7 +15,7 @@ import com.eCommerce.auth.service.AuthService;
 
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/api/auth")
 public class AuthController {
 
     private AuthService authService;

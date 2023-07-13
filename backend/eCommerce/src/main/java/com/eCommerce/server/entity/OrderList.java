@@ -26,6 +26,7 @@ public class OrderList {
     private Long id;
 	private LocalDate initializedOrder;
 	private double totalPrice;
+	@Enumerated(EnumType.STRING)
 	private OrderStatus orderStatus;
 	@ManyToOne
 	private User user;

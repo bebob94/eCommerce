@@ -1,5 +1,8 @@
 package com.eCommerce.server.service;
 
+import java.time.LocalDate;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,6 +36,7 @@ public class ReviewService {
 			r.setUser(u);
 			r.setProduct(p);
 			r.setComment(review.getComment());
+			r.setPublished(LocalDate.now());
 			r.setValutation(review.getValutation());
 			reviewRepo.save(r);
 			return "Review added successfully";
@@ -49,6 +53,11 @@ public class ReviewService {
 		}else {
 			return reviewRepo.findById(id).get();
 		}
+	}
+	
+//	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< CERCA TUTTI I REVIEW>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	public List<Review> findAllReviews() {
+		return (List<Review>) reviewRepo.findAll();
 	}
 	
 //	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< MODIFICA REVIEW >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>	

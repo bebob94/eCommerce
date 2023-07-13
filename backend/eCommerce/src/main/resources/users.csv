@@ -1,0 +1,5 @@
+﻿id,email,image,name,password,username
+0,johndoe@example.com,johndoe.jpg,John Doe,password1,johndoe
+2,michaeljohnson@example.com,michaeljohnson.jpg,Michael Johnson,password3,michaeljohnson
+3,sarahbrown@example.com,sarahbrown.jpg,Sarah Brown,password4,sarahbrown
+4,davidwilson@example.com,davidwilson.jpg,David Wilson,password5,davidwilson

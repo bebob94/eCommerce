@@ -3,6 +3,7 @@ package com.eCommerce.server.entity;
 import java.time.LocalDate;
 
 import com.eCommerce.auth.entity.User;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -28,6 +29,7 @@ public class Review {
 	 private Long id;
 	 @ManyToOne
 	 private User user;
+	 @JsonIgnoreProperties(value = "review")
 	 @ManyToOne
 	 private Product product;
 	 private String comment;

@@ -64,11 +64,13 @@ public class ProductController {
 		
 		//<<<<<<<<<<<<<<<<<<<<<<<<< METODI GET>>>>>>>>>>>>>>>>>>>>>>>>>
 		@GetMapping("/{id}")
+		@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
 		public ResponseEntity<Product> getProductById(@PathVariable Long id){
 			return new ResponseEntity<Product>(productService.findProductById(id),HttpStatus.OK);
 		}
 		
 		@GetMapping("/all")
+		@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
 		public ResponseEntity<List<Product>> getAllProducts() {
 			return new ResponseEntity<List<Product>>(productService.findAllProducts(),HttpStatus.OK);
 		}

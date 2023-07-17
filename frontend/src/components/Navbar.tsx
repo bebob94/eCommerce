@@ -1,21 +1,36 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { USER } from "../Redux/ActionType";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { RootState } from "../Redux/Store";
 import { motion } from "framer-motion";
+import { USER_BY_USERNAME, userByUsername } from "../Redux/ActionType/User";
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>("");
 
+  const User = useSelector((state: RootState) => state?.User.user);
   const user = useSelector((state: RootState) => state?.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< USE_NAVIGATE, USE_SELECTORE, USE_STATE, USE_DISPATCH >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
   // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< FUNZIONI DEL COMPONENTE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  useEffect(() => {
+    (async () => {
+      let data = await userByUsername(
+        user.user.username,
+        user.user.accessToken
+      );
+      dispatch({
+        type: USER_BY_USERNAME,
+        payload: data,
+      });
+    })();
+  }, []);
+
   const handleSubmit = (e: any) => {
     e.preventDefault();
     dispatch({
@@ -49,59 +64,12 @@ const Navbar = () => {
             className="h-8 mr-3"
             alt="Flowbite Logo"
           />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+          <span className="hidden ss:block self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
             Bebozon
           </span>
         </a>
-        <div className="relative flex w-4/6">
-          <button
-            type="button"
-            className="flex items-center justify-center px-4 py-2 text-sm bg-gray-200 rounded-l-md focus:outline-none"
-            onClick={() => setIsCategoryOpen(!isCategoryOpen)}
-          >
-            Categories
-            <svg
-              className={`ml-2 h-5 w-5 transform ${
-                isCategoryOpen ? "-rotate-180" : "rotate-0"
-              }`}
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                fillRule="evenodd"
-                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </button>
-          {isCategoryOpen && (
-            <div className=" absolute top-8 left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-              <div
-                className="py-1"
-                role="menu"
-                aria-orientation="vertical"
-                aria-labelledby="options-menu"
-              >
-                {categories.map((category, index) => (
-                  <button
-                    key={index}
-                    className={`${
-                      selectedCategory === category
-                        ? "bg-gray-100 text-gray-900"
-                        : "text-gray-700"
-                    } block px-4 py-2 text-sm w-full text-left`}
-                    role="menuitem"
-                    onClick={() => handleCategorySelect(category)}
-                  >
-                    {category}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
 
+        <div className="relative  flex w-3/6">
           <input
             type="text"
             placeholder="Search"
@@ -134,7 +102,7 @@ const Navbar = () => {
               <span className="sr-only">Open user menu</span>
               <img
                 className="w-8 h-8 rounded-full"
-                src="/docs/images/people/profile-picture-3.jpg"
+                src={User?.image}
                 alt="user photo"
               />
             </button>
@@ -153,10 +121,10 @@ const Navbar = () => {
               >
                 <div className="px-4 py-3">
                   <span className="block text-sm text-gray-900 dark:text-white">
-                    Bonnie Green
+                    {User.name}
                   </span>
                   <span className="block text-sm text-gray-500 truncate dark:text-gray-400">
-                    name@flowbite.com
+                    {User.email}
                   </span>
                 </div>
                 <ul className="py-2" aria-labelledby="user-menu-button">

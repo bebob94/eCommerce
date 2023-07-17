@@ -19,3 +19,35 @@ export interface Registration {
   accessToken: string;
   roles: Roles[];
 }
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< USER >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+export interface MyUser {
+  AllUsers: user[];
+  user: user;
+}
+export interface user {
+  id: number;
+  name: string;
+  image: string;
+  username: string;
+  email: string;
+  password: string;
+  address: address[];
+  roles: Roles[];
+}
+export interface userChange {
+  id?: number;
+  name: string;
+  surname: string;
+  indirizzo: string;
+}
+
+export interface address {
+  id: number;
+  state: string;
+  city: string;
+  street: string;
+  region: string;
+  houseNumber: number;
+  cap: string;
+}

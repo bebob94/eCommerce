@@ -1,6 +1,8 @@
 package com.eCommerce.server.service;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,13 +37,20 @@ public class AddressService {
 		a.setHouseNumber(address.getHouseNumber());
 		a.setCap(address.getCap());
 		addressRepo.save(a);
-		if (!u.getAddress().contains(a)) {
-			u.getAddress().add(a);
-			a.getUsers().add(u);
-			userRepo.save(u);
-		}
-		return "Address added successfully";
+		AddAddressToUser(a, u);
+		return "Address create successfully";
 	}
+	
+	public String AddAddressToUser(Address a, User u) {
+		
+	    List<Address> userAddresses = u.getAddress();
+	    userAddresses.add(a);
+	    u.setAddress(userAddresses);
+	    userRepo.save(u);
+	    return "Address added successfully";
+
+	}
+	
 	
 //	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< CERCA ADDRESS PER ID>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 	public Address findAddressById(Long id) {

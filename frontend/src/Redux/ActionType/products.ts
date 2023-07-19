@@ -19,7 +19,7 @@ export const allProducts = async (token: String) => {
 };
 
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< RICERCA PRODUCT PER ID >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-export const userById = async (value: Number | undefined, token: String) => {
+export const productById = async (value: Number | undefined, token: String) => {
   try {
     let res = await fetch(`http://localhost:8080/product/${value}`, {
       method: "GET",

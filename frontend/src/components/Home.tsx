@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { ALL_PRODUCTS, allProducts } from "../Redux/ActionType/products";
+import {
+  ALL_PRODUCTS,
+  PRODUCT_BY_ID,
+  allProducts,
+  productById,
+} from "../Redux/ActionType/products";
 import { RootState } from "../Redux/Store";
 import { products } from "../Redux/Interfaces";
 import { Link } from "react-router-dom";
@@ -11,6 +16,14 @@ const Home = () => {
     (state: RootState) => state?.products.AllProducts
   );
   const dispatch = useDispatch();
+
+  const handleClick = async (id: Number) => {
+    let data = await productById(id, user.accessToken);
+    dispatch({
+      type: PRODUCT_BY_ID,
+      payload: data,
+    });
+  };
 
   useEffect(() => {
     (async () => {
@@ -32,7 +45,10 @@ const Home = () => {
             key={i}
             className="w-1/4 ss:w-1/2 xs:w-full  m-1 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
           >
-            <Link to={`/product/${product.id}`}>
+            <Link
+              to={`/product/${product.id}`}
+              onClick={() => handleClick(product?.id)}
+            >
               <img
                 className="p-8 rounded-t-lg h-72 w-full"
                 src={product.image}

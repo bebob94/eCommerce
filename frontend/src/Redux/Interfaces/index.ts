@@ -42,6 +42,7 @@ export interface userChange {
   indirizzo: string;
 }
 
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< ADDRESS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 export interface address {
   id: number;
   state: string;
@@ -50,4 +51,30 @@ export interface address {
   region: string;
   houseNumber: number;
   cap: string;
+}
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< PRODUCTS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+export interface MyProduct {
+  AllProducts: products[];
+  product: products;
+}
+
+export interface products {
+  id: 0;
+  name: string;
+  description: string;
+  price: number;
+  quantity: number;
+  category: string;
+  image: string;
+  review: review[];
+}
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< REVIEW >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+export interface review {
+  id: number;
+  user: user;
+  comment: string;
+  valutation: number;
+  published: Date;
 }

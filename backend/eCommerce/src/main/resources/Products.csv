@@ -1,0 +1,51 @@
+﻿id,category,description,image,name,price,quantity
+0,ELECTRONICS,Powerful smartphone with advanced features,smartphone_xyz.jpg,Smartphone XYZ,599.99,10
+1,ELECTRONICS,High-performance laptop for professional use,laptop_abc.jpg,Laptop ABC,1299.99,5
+2,CLOTHING,Comfortable t-shirt in red color,tshirt_red.jpg,T-Shirt Red,19.99,50
+3,BOOKS,Popular book with an intriguing story,book_xyz.jpg,Book XYZ,29.99,20
+4,SPORT,Official soccer ball for matches,soccer_ball.jpg,Soccer Ball,24.99,30
+5,TOYS,Remote-controlled toy car for kids,toy_car.jpg,Toy Car,39.99,15
+6,FOOD,Delicious milk chocolate bar,chocolate_bar.jpg,Chocolate Bar,2.99,100
+7,SPORT,High-quality running shoes for athletes,running_shoes.jpg,Running Shoes,79.99,25
+8,ELECTRONICS,Noise-canceling headphones with excellent sound quality,headphones_xyz.jpg,Headphones XYZ,149.99,8
+9,CLOTHING,Elegant blue dress for special occasions,dress_blue.jpg,Dress Blue,69.99,12
+10,BOOKS,Thrilling mystery novel with unexpected twists,mystery_novel.jpg,Mystery Novel,12.99,30
+11,SPORT,Official basketball for indoor and outdoor use,basketball.jpg,Basketball,29.99,20
+12,TOYS,Collectible action figure of a popular superhero,action_figure.jpg,Action Figure,49.99,10
+13,FOOD,Freshly roasted coffee beans for the perfect cup of coffee,coffee_beans.jpg,Coffee Beans,9.99,50
+14,ELECTRONICS,Portable Bluetooth speaker with great sound quality,bluetooth_speaker.jpg,Bluetooth Speaker,59.99,15
+15,CLOTHING,Classic black jeans for everyday wear,jeans_black.jpg,Jeans Black,39.99,30
+16,BOOKS,Beautifully illustrated art book showcasing various artists,art_book.jpg,Art Book,34.99,15
+17,SPORT,Official football for matches and training,football.jpg,Football,19.99,25
+18,TOYS,Fun and engaging board game for family and friends,board_game.jpg,Board Game,39.99,20
+19,FOOD,Healthy and delicious granola bars for a quick snack,granola_bars.jpg,Granola Bars,4.99,50
+20,ELECTRONICS,Comfortable wireless earphones with long battery life,wireless_earphones.jpg,Wireless Earphones,79.99,10
+21,CLOTHING,Cozy gray sweater for chilly days,sweater_gray.jpg,Sweater Gray,49.99,15
+22,BOOKS,Comprehensive cookbook with a wide range of recipes,cookbook.jpg,Cookbook,24.99,20
+23,SPORT,Professional golf clubs for avid golfers,golf_clubs.jpg,Golf Clubs,299.99,5
+24,TOYS,Challenging puzzle with beautiful artwork,puzzle.jpg,Puzzle,14.99,30
+25,FOOD,Refreshing energy drink to boost your energy levels,energy_drink.jpg,Energy Drink,2.99,100
+26,ELECTRONICS,Multi-functional smartwatch with fitness tracking features,smart_watch.jpg,Smart Watch,199.99,10
+27,CLOTHING,Stylish pink dress for special occasions,dress_pink.jpg,Dress Pink,79.99,8
+28,BOOKS,Comprehensive travel guide for popular destinations,travel_guide.jpg,Travel Guide,19.99,25
+29,SPORT,High-quality yoga mat for comfortable workouts,yoga_mat.jpg,Yoga Mat,29.99,20
+30,TOYS,Creative building blocks set for kids' imagination,building_blocks.jpg,Building Blocks Set,19.99,30
+31,FOOD,Nutritious protein bars for post-workout recovery,protein_bars.jpg,Protein Bars,3.99,50
+32,ELECTRONICS,Advanced digital camera for capturing stunning photos,digital_camera.jpg,Digital Camera,499.99,5
+33,CLOTHING,Stylish white sneakers for a trendy look,sneakers_white.jpg,Sneakers White,89.99,12
+34,BOOKS,Inspiring biography of a prominent figure,biography_book.jpg,Biography Book,14.99,30
+35,SPORT,High-quality baseball glove for fielding,baseball_glove.jpg,Baseball Glove,49.99,20
+36,TOYS,Versatile building set for creative play,building_set.jpg,Building Set,24.99,15
+37,FOOD,Exquisite gourmet chocolate assortment,gourmet_chocolate.jpg,Gourmet Chocolate,19.99,50
+38,ELECTRONICS,Portable tablet for work and entertainment,tablet.jpg,Tablet,299.99,8
+39,CLOTHING,Classic black suit for formal occasions,suit_black.jpg,Suit Black,199.99,10
+40,BOOKS,Comprehensive art history book with stunning visuals,art_history_book.jpg,Art History Book,39.99,12
+41,SPORT,Convenient strap for carrying and storing yoga mats,yoga_mat_strap.jpg,Yoga Mat Strap,9.99,25
+42,TOYS,Remote-controlled drone for aerial photography and fun,rc_drone.jpg,RC Drone,149.99,10
+43,FOOD,Healthy and organic snacks for guilt-free munching,organic_snacks.jpg,Organic Snacks,5.99,50
+44,ELECTRONICS,Voice-controlled smart speaker with virtual assistant,smart_speaker.jpg,Smart Speaker,129.99,8
+45,CLOTHING,Stylish blue jacket for a fashionable look,jacket_blue.jpg,Jacket Blue,79.99,12
+46,BOOKS,Collection of beautiful and thought-provoking poems,poetry_book.jpg,Poetry Book,19.99,20
+47,SPORT,Professional tennis racket for competitive play,tennis_racket.jpg,Tennis Racket,149.99,5
+48,SPORT,Sturdy bicycle for commuting and recreational rides,bicycle.jpg,Bicycle,299.99,5
+49,SPORT,Spacious backpack for carrying essentials,backpack.jpg,Backpack,39.99,20

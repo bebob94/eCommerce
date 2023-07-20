@@ -1,0 +1,81 @@
+.myRegister {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 100%;
+  text-align: center;
+}
+
+section {
+  width: 100%;
+  max-width: 420px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem;
+  border: 3px solid black;
+  background: linear-gradient(
+    130deg,
+    rgb(246, 249, 246) 50%,
+    rgba(241, 109, 8, 1) 60%
+  );
+  color: black;
+  border-radius: 0.5rem;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+  font-family: "Nunito", sans-serif;
+  font-size: medium;
+  padding: 0.25rem;
+  border: 1px solid black;
+  margin: 5px 0;
+  border-radius: 0.5rem;
+}
+.hide {
+  display: none;
+}
+.valid {
+  color: limegreen;
+  margin-left: 0.25rem;
+}
+.invalid {
+  color: red;
+  margin-left: 0.25rem;
+}
+.errmsg {
+  background-color: lightpink;
+  color: firebrick;
+  font-weight: bold;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.instructions {
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  background: #f59106;
+  color: black;
+  margin: 1em 0;
+  padding: 0.25rem;
+  position: relative;
+  bottom: 0;
+  border: 1px solid black;
+}
+.offscreen {
+  position: absolute;
+  left: -9999px;
+}
+.formButtons {
+  display: none;
+}
+.formButtonsOk {
+  text-align: center;
+  margin: 1em auto;
+  border: 1.5px solid black;
+  border-radius: 0.5rem;
+  width: 5em;
+}

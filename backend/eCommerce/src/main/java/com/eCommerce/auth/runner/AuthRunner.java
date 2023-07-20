@@ -1,9 +1,7 @@
 package com.eCommerce.auth.runner;
 
-import java.util.HashSet;
-import java.util.List;
+
 import java.util.Set;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -34,9 +32,11 @@ public class AuthRunner implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		System.out.println("Run...");
+		
+
 		// Metodo da lanciare solo la prima volta
 		// Serve per salvare i ruoli nel DB
-		setRoleDefault();
+//		setRoleDefault();
 		
 	}
 	

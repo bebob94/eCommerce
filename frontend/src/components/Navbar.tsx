@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { RootState } from "../Redux/Store";
 import { motion } from "framer-motion";
 import { USER_BY_USERNAME, userByUsername } from "../Redux/ActionType/User";
+import carrello from "../icons8-fast-cart-64.png";
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -56,7 +57,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900">
+    <nav className="bg-blue-950 border-gray-200 dark:bg-gray-900 text-white">
       <div className="max-w-screen-xl flex items-center justify-between mx-auto p-3">
         <a href="https://flowbite.com/" className="flex items-center">
           <img
@@ -90,82 +91,94 @@ const Navbar = () => {
             />
           </svg>
         </div>
+
         {user?.user && user?.user.username ? (
           <>
-            <button
-              type="button"
-              className="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-              id="user-menu-button"
-              aria-expanded={isDropdownOpen ? "true" : "false"}
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            >
-              <span className="sr-only">Open user menu</span>
-              <img
-                className="w-8 h-8 rounded-full"
-                src={User?.image}
-                alt="user photo"
-              />
-            </button>
+            <div className="flex items-center justify-between ">
+              <div className="flex items-center font-serif font-medium mr-8">
+                Carrello{" "}
+                <img
+                  src={carrello}
+                  alt="carrello"
+                  className="h-10 ml-3 text-white"
+                />
+              </div>
 
-            {isDropdownOpen && (
-              <motion.div
-                className="z-50 absolute right-0 top-16 xs:w-3/4 sm:w-1/5 mr-5 mt-2 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
-                id="user-dropdown"
-                initial="hidden"
-                whileInView="visible"
-                transition={{ duration: 0.5 }}
-                variants={{
-                  hidden: { opacity: 0, y: 50 },
-                  visible: { opacity: 1, y: 0 },
-                }}
+              <button
+                type="button"
+                className="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                id="user-menu-button"
+                aria-expanded={isDropdownOpen ? "true" : "false"}
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               >
-                <div className="px-4 py-3">
-                  <span className="block text-sm text-gray-900 dark:text-white">
-                    {User.name}
-                  </span>
-                  <span className="block text-sm text-gray-500 truncate dark:text-gray-400">
-                    {User.email}
-                  </span>
-                </div>
-                <ul className="py-2" aria-labelledby="user-menu-button">
-                  <li>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                    >
-                      Dashboard
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                    >
-                      Settings
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                    >
-                      Earnings
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      onClick={(e) => {
-                        handleSubmit(e);
-                      }}
-                      href="#"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                    >
-                      Sign out
-                    </a>
-                  </li>
-                </ul>
-              </motion.div>
-            )}
+                {" "}
+                <span className="sr-only">Open user menu</span>
+                <img
+                  className="w-8 h-8 rounded-full"
+                  src={User?.image}
+                  alt="user photo"
+                />
+              </button>
+              {isDropdownOpen && (
+                <motion.div
+                  className="z-50 absolute right-0 top-16 xs:w-3/4 sm:w-1/5 mr-5 mt-2 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
+                  id="user-dropdown"
+                  initial="hidden"
+                  whileInView="visible"
+                  transition={{ duration: 0.5 }}
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                >
+                  <div className="px-4 py-3">
+                    <span className="block text-sm text-gray-900 dark:text-white">
+                      {User.name}
+                    </span>
+                    <span className="block text-sm text-gray-500 truncate dark:text-gray-400">
+                      {User.email}
+                    </span>
+                  </div>
+                  <ul className="py-2" aria-labelledby="user-menu-button">
+                    <li>
+                      <a
+                        href="#"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                      >
+                        Dashboard
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                      >
+                        Settings
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                      >
+                        Earnings
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        onClick={(e) => {
+                          handleSubmit(e);
+                        }}
+                        href="#"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                      >
+                        Sign out
+                      </a>
+                    </li>
+                  </ul>
+                </motion.div>
+              )}
+            </div>
           </>
         ) : (
           <div>

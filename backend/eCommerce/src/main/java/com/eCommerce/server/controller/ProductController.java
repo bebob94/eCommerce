@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.eCommerce.server.entity.Category;
 import com.eCommerce.server.entity.Product;
 import com.eCommerce.server.payload.productDto;
 import com.eCommerce.server.service.ProductService;
@@ -73,5 +75,11 @@ public class ProductController {
 		@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
 		public ResponseEntity<List<Product>> getAllProducts() {
 			return new ResponseEntity<List<Product>>(productService.findAllProducts(),HttpStatus.OK);
+		}
+		
+		@GetMapping("/category/{imp}")
+		@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+		public ResponseEntity<List<Product>> findByCategory(@PathVariable Category imp){
+			return new ResponseEntity<List<Product>>(productService.findByCategory(imp), HttpStatus.OK);
 		}
 }

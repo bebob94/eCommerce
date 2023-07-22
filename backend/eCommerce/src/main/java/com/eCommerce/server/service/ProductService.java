@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.eCommerce.server.entity.Category;
 import com.eCommerce.server.entity.Product;
 import com.eCommerce.server.payload.productDto;
 import com.eCommerce.server.repository.ProductRepository;
@@ -38,6 +39,12 @@ public class ProductService {
 			return productRepo.findById(id).get();
 		}
 	}
+	
+//	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< CERCA PRODUCT PER CATEGORIA>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	public List <Product> findByCategory(Category category){
+		return productRepo.findByCategory(category);
+	}
+	
 	
 //	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< CERCA TUTTI I PRODUCT>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 	public List<Product> findAllProducts() {

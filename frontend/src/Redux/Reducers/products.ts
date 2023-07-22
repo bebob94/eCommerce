@@ -1,6 +1,10 @@
 import { PayloadAction } from "@reduxjs/toolkit";
 import { MyProduct, products } from "../Interfaces";
-import { ALL_PRODUCTS, PRODUCT_BY_ID } from "../ActionType/products";
+import {
+  ALL_PRODUCTS,
+  PRODUCTS_BY_CATEGORY,
+  PRODUCT_BY_ID,
+} from "../ActionType/products";
 
 const inizialState: MyProduct = {
   AllProducts: [],
@@ -21,6 +25,11 @@ export const ProductsReducer = (
       return {
         ...state,
         product: action.payload as products,
+      };
+    case PRODUCTS_BY_CATEGORY:
+      return {
+        ...state,
+        AllProducts: action.payload as products[],
       };
 
     default:

@@ -21,15 +21,15 @@ export const ProductsReducer = (
         ...state,
         AllProducts: action.payload as products[],
       };
-    case PRODUCT_BY_ID:
-      return {
-        ...state,
-        product: action.payload as products,
-      };
     case PRODUCTS_BY_CATEGORY:
       return {
         ...state,
         AllProducts: action.payload as products[],
+      };
+    case PRODUCT_BY_ID:
+      return {
+        ...state,
+        product: action.payload as products,
       };
 
     default:

@@ -57,3 +57,24 @@ export const productsByCategory = async (
     console.log(error);
   }
 };
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< RICERCA PRODUCT PER NOME >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+export const productByName = async (
+  value: string | undefined,
+  token: String
+) => {
+  try {
+    let res = await fetch(`http://localhost:8080/product/name/${value}`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    if (res.ok) {
+      let data = await res.json();
+      return data;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};

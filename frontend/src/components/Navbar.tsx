@@ -6,25 +6,38 @@ import { RootState } from "../Redux/Store";
 import { motion } from "framer-motion";
 import { USER_BY_USERNAME, userByUsername } from "../Redux/ActionType/User";
 import carrello from "../icons8-fast-cart-64.png";
+import { ALL_PRODUCTS, productByName } from "../Redux/ActionType/products";
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isCategoryOpen, setIsCategoryOpen] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState<string>("");
-
-  const User = useSelector((state: RootState) => state?.User.user);
-  const user = useSelector((state: RootState) => state?.user);
+  const [search, setSearch] = useState("");
+  const User = useSelector((state: RootState) => state?.User?.user);
+  const user = useSelector((state: RootState) => state?.user.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< USE_NAVIGATE, USE_SELECTORE, USE_STATE, USE_DISPATCH >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
   // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< FUNZIONI DEL COMPONENTE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  const handleSearch = (e: any) => {
+    e.preventDefault();
+    setSearch(e.target.value);
+    console.log(e.target.value);
+  };
+
+  const handleSearchSubmit = async (e: any) => {
+    e.preventDefault();
+    let data = await productByName(search, user.accessToken);
+    dispatch({
+      type: ALL_PRODUCTS,
+      payload: data,
+    });
+    navigate("/Products");
+    console.log("enter");
+  };
+
   useEffect(() => {
     (async () => {
-      let data = await userByUsername(
-        user.user.username,
-        user.user.accessToken
-      );
+      let data = await userByUsername(user.username, user.accessToken);
       dispatch({
         type: USER_BY_USERNAME,
         payload: data,
@@ -41,25 +54,10 @@ const Navbar = () => {
     navigate("/Login");
   };
 
-  const categories = [
-    "ELECTRONICS",
-    "CLOTHING",
-    "BOOKS",
-    "SPORT",
-    "TOYS",
-    "FOOD",
-    "MERCHANDISING",
-  ];
-
-  const handleCategorySelect = (category: string) => {
-    setSelectedCategory(category);
-    setIsCategoryOpen(false);
-  };
-
   return (
     <nav className="bg-blue-950 border-gray-200 dark:bg-gray-900 text-white">
       <div className="max-w-screen-xl flex items-center justify-between mx-auto p-3">
-        <a href="https://flowbite.com/" className="flex items-center">
+        <a href="/" className="flex items-center">
           <img
             src="https://flowbite.com/docs/images/logo.svg"
             className="h-8 mr-3"
@@ -74,7 +72,15 @@ const Navbar = () => {
           <input
             type="text"
             placeholder="Search"
-            className="w-full px-4 py-2 text-sm bg-gray-100  focus:outline-none focus:ring-2 focus:ring-gray-300"
+            className="w-full px-4 py-2 text-sm bg-gray-100 text-black focus:outline-none focus:ring-2 focus:ring-gray-300"
+            onChange={(e) => {
+              handleSearch(e);
+            }}
+            onKeyUp={(e) => {
+              if (e.key === "Enter" || e.keyCode === 13) {
+                handleSearchSubmit(e);
+              }
+            }}
           />
           <svg
             className="absolute w-5 h-5 top-3 right-3 text-gray-500"
@@ -92,7 +98,7 @@ const Navbar = () => {
           </svg>
         </div>
 
-        {user?.user && user?.user.username ? (
+        {user && user?.username ? (
           <>
             <div className="flex items-center justify-between ">
               <div className="flex items-center font-serif font-medium mr-8">

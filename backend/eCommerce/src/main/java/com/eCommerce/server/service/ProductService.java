@@ -45,6 +45,11 @@ public class ProductService {
 		return productRepo.findByCategory(category);
 	}
 	
+//	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< CERCA PRODUCT PER PARTE DI NOME >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	public List<Product> findByNameContains(String s){
+		return productRepo.findByNameContains(s);
+	}
+	
 	
 //	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< CERCA TUTTI I PRODUCT>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 	public List<Product> findAllProducts() {

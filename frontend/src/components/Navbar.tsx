@@ -57,7 +57,7 @@ const Navbar = () => {
   return (
     <nav className="bg-blue-950 border-gray-200 dark:bg-gray-900 text-white">
       <div className="max-w-screen-xl flex items-center justify-between mx-auto p-3">
-        <a href="/" className="flex items-center">
+        <Link className="flex items-center" to={"/"}>
           <img
             src="https://flowbite.com/docs/images/logo.svg"
             className="h-8 mr-3"
@@ -66,7 +66,7 @@ const Navbar = () => {
           <span className="hidden ss:block self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
             Bebozon
           </span>
-        </a>
+        </Link>
 
         <div className="relative  flex w-3/6">
           <input
@@ -170,6 +170,7 @@ const Navbar = () => {
                         Earnings
                       </a>
                     </li>
+                    <hr />
                     <li>
                       <a
                         onClick={(e) => {

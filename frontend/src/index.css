@@ -13,5 +13,6 @@ body,
     rgb(246, 249, 246) 50%,
     rgba(241, 109, 8, 1) 60%
   );
+
   @apply text-black;
 }

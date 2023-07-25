@@ -8,6 +8,7 @@ import {
   productById,
 } from "../Redux/ActionType/products";
 import { useNavigate } from "react-router-dom";
+import Error from "./Error/Error";
 
 const Home = () => {
   const user = useSelector((state: RootState) => state?.user?.user);
@@ -49,8 +50,8 @@ const Home = () => {
   return (
     <div className="h-full">
       <div className=" h-60  py-5 text-center">
-        <h2 className="text-6xl font-bold mb-3">Scopri tutte le offerte</h2>
-        <h4 className="text-4xl font-semibold mb-5">sui migliori prodotti</h4>
+        <h2 className="text-6xl font-bold mb-3">Discover all the offers</h2>
+        <h4 className="text-4xl font-semibold mb-5">on the best products</h4>
         <h3
           className="text-4xl font-bold text-green-900 font-serif  underline "
           onClick={handleClick}
@@ -58,11 +59,12 @@ const Home = () => {
             cursor: `pointer`,
           }}
         >
-          LASCIATI ISPIRARE
+          BE INSPIRED
         </h3>
       </div>
+
       <p className="text-2xl font-semibold mt-5 mx-5">Some categories...</p>
-      {user.username && (
+      {user.username ? (
         <div className="flex justify-between mx-5 ">
           <div className="w-1/3 mt-5 p-3 mb-5  flex flex-wrap justify-between bg-white shadow-md shadow-black rounded-md">
             <p className="text-xl font-medium w-full mb-3">Eletronics:</p>
@@ -141,6 +143,8 @@ const Home = () => {
               ))}
           </div>
         </div>
+      ) : (
+        <Error />
       )}
     </div>
   );

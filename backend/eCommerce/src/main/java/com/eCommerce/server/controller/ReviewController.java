@@ -23,7 +23,7 @@ import com.eCommerce.server.repository.ProductRepository;
 import com.eCommerce.server.repository.ReviewRepository;
 import com.eCommerce.server.service.ReviewService;
 
-@CrossOrigin(origins = "http://localhost:3000", maxAge = 6000000)
+@CrossOrigin(origins = "http://localhost:3000", maxAge = 6000000,allowCredentials = "true")
 @RestController
 @RequestMapping("/review")
 public class ReviewController {

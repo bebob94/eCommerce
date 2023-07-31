@@ -9,6 +9,7 @@ import {
 } from "../Redux/ActionType/products";
 import { useNavigate } from "react-router-dom";
 import Error from "./Error/Error";
+import { USER_BY_USERNAME, userByUsername } from "../Redux/ActionType/User";
 
 const Home = () => {
   const user = useSelector((state: RootState) => state?.user?.user);
@@ -45,6 +46,13 @@ const Home = () => {
         payload: data,
       });
     })();
+    (async () => {
+      let data = await userByUsername(user.username, user.accessToken);
+      dispatch({
+        type: USER_BY_USERNAME,
+        payload: data,
+      });
+    })();
   }, []);
 
   return (
@@ -64,12 +72,12 @@ const Home = () => {
       </div>
 
       <p className="text-2xl font-semibold mt-5 mx-5">Some categories...</p>
-      {user.username ? (
+      {user?.username ? (
         <div className="flex justify-between mx-5 ">
           <div className="w-1/3 mt-5 p-3 mb-5  flex flex-wrap justify-between bg-white shadow-md shadow-black rounded-md">
             <p className="text-xl font-medium w-full mb-3">Eletronics:</p>
             {products
-              .filter((product) => product?.category === "ELECTRONICS")
+              ?.filter((product) => product?.category === "ELECTRONICS")
               .slice(0, 4)
               .map((product, i) => (
                 <div
@@ -95,7 +103,7 @@ const Home = () => {
           <div className="w-1/3 mt-5 p-3 mb-5 mx-3 flex flex-wrap justify-between  bg-white shadow-md shadow-black rounded-md">
             <p className="text-xl font-medium w-full mb-3">Sport:</p>
             {products
-              .filter((product) => product.category === "SPORT")
+              ?.filter((product) => product?.category === "SPORT")
               .slice(0, 4)
               .map((product, i) => (
                 <div
@@ -120,7 +128,7 @@ const Home = () => {
           <div className="w-1/3 mt-5 p-3 mb-5  flex flex-wrap justify-between  bg-white shadow-md shadow-black rounded-md">
             <p className="text-xl font-medium w-full mb-3">Books:</p>
             {products
-              .filter((product) => product.category === "BOOKS")
+              ?.filter((product) => product?.category === "BOOKS")
               .slice(0, 4)
               .map((product, i) => (
                 <div

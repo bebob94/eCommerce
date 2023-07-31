@@ -35,16 +35,6 @@ const Navbar = () => {
     console.log("enter");
   };
 
-  useEffect(() => {
-    (async () => {
-      let data = await userByUsername(user.username, user.accessToken);
-      dispatch({
-        type: USER_BY_USERNAME,
-        payload: data,
-      });
-    })();
-  }, []);
-
   const handleSubmit = (e: any) => {
     e.preventDefault();
     dispatch({
@@ -147,12 +137,12 @@ const Navbar = () => {
                   </div>
                   <ul className="py-2" aria-labelledby="user-menu-button">
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        to={"/Dashboard"}
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                       >
                         Dashboard
-                      </a>
+                      </Link>
                     </li>
                     <li>
                       <a

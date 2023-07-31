@@ -31,7 +31,6 @@ export const ProductsReducer = (
         ...state,
         product: action.payload as products,
       };
-
     default:
       return state;
   }

@@ -1,51 +1,51 @@
 ﻿id,category,description,image,name,price,quantity
-0,ELECTRONICS,Powerful smartphone with advanced features,smartphone_xyz.jpg,Smartphone XYZ,599.99,10
-1,ELECTRONICS,High-performance laptop for professional use,laptop_abc.jpg,Laptop ABC,1299.99,5
-2,CLOTHING,Comfortable t-shirt in red color,tshirt_red.jpg,T-Shirt Red,19.99,50
-3,BOOKS,Popular book with an intriguing story,book_xyz.jpg,Book XYZ,29.99,20
-4,SPORT,Official soccer ball for matches,soccer_ball.jpg,Soccer Ball,24.99,30
-5,TOYS,Remote-controlled toy car for kids,toy_car.jpg,Toy Car,39.99,15
-6,FOOD,Delicious milk chocolate bar,chocolate_bar.jpg,Chocolate Bar,2.99,100
-7,SPORT,High-quality running shoes for athletes,running_shoes.jpg,Running Shoes,79.99,25
-8,ELECTRONICS,Noise-canceling headphones with excellent sound quality,headphones_xyz.jpg,Headphones XYZ,149.99,8
-9,CLOTHING,Elegant blue dress for special occasions,dress_blue.jpg,Dress Blue,69.99,12
-10,BOOKS,Thrilling mystery novel with unexpected twists,mystery_novel.jpg,Mystery Novel,12.99,30
-11,SPORT,Official basketball for indoor and outdoor use,basketball.jpg,Basketball,29.99,20
-12,TOYS,Collectible action figure of a popular superhero,action_figure.jpg,Action Figure,49.99,10
-13,FOOD,Freshly roasted coffee beans for the perfect cup of coffee,coffee_beans.jpg,Coffee Beans,9.99,50
-14,ELECTRONICS,Portable Bluetooth speaker with great sound quality,bluetooth_speaker.jpg,Bluetooth Speaker,59.99,15
-15,CLOTHING,Classic black jeans for everyday wear,jeans_black.jpg,Jeans Black,39.99,30
-16,BOOKS,Beautifully illustrated art book showcasing various artists,art_book.jpg,Art Book,34.99,15
-17,SPORT,Official football for matches and training,football.jpg,Football,19.99,25
-18,TOYS,Fun and engaging board game for family and friends,board_game.jpg,Board Game,39.99,20
-19,FOOD,Healthy and delicious granola bars for a quick snack,granola_bars.jpg,Granola Bars,4.99,50
-20,ELECTRONICS,Comfortable wireless earphones with long battery life,wireless_earphones.jpg,Wireless Earphones,79.99,10
-21,CLOTHING,Cozy gray sweater for chilly days,sweater_gray.jpg,Sweater Gray,49.99,15
-22,BOOKS,Comprehensive cookbook with a wide range of recipes,cookbook.jpg,Cookbook,24.99,20
-23,SPORT,Professional golf clubs for avid golfers,golf_clubs.jpg,Golf Clubs,299.99,5
-24,TOYS,Challenging puzzle with beautiful artwork,puzzle.jpg,Puzzle,14.99,30
-25,FOOD,Refreshing energy drink to boost your energy levels,energy_drink.jpg,Energy Drink,2.99,100
-26,ELECTRONICS,Multi-functional smartwatch with fitness tracking features,smart_watch.jpg,Smart Watch,199.99,10
-27,CLOTHING,Stylish pink dress for special occasions,dress_pink.jpg,Dress Pink,79.99,8
-28,BOOKS,Comprehensive travel guide for popular destinations,travel_guide.jpg,Travel Guide,19.99,25
-29,SPORT,High-quality yoga mat for comfortable workouts,yoga_mat.jpg,Yoga Mat,29.99,20
-30,TOYS,Creative building blocks set for kids' imagination,building_blocks.jpg,Building Blocks Set,19.99,30
-31,FOOD,Nutritious protein bars for post-workout recovery,protein_bars.jpg,Protein Bars,3.99,50
-32,ELECTRONICS,Advanced digital camera for capturing stunning photos,digital_camera.jpg,Digital Camera,499.99,5
-33,CLOTHING,Stylish white sneakers for a trendy look,sneakers_white.jpg,Sneakers White,89.99,12
-34,BOOKS,Inspiring biography of a prominent figure,biography_book.jpg,Biography Book,14.99,30
-35,SPORT,High-quality baseball glove for fielding,baseball_glove.jpg,Baseball Glove,49.99,20
-36,TOYS,Versatile building set for creative play,building_set.jpg,Building Set,24.99,15
-37,FOOD,Exquisite gourmet chocolate assortment,gourmet_chocolate.jpg,Gourmet Chocolate,19.99,50
-38,ELECTRONICS,Portable tablet for work and entertainment,tablet.jpg,Tablet,299.99,8
-39,CLOTHING,Classic black suit for formal occasions,suit_black.jpg,Suit Black,199.99,10
-40,BOOKS,Comprehensive art history book with stunning visuals,art_history_book.jpg,Art History Book,39.99,12
-41,SPORT,Convenient strap for carrying and storing yoga mats,yoga_mat_strap.jpg,Yoga Mat Strap,9.99,25
-42,TOYS,Remote-controlled drone for aerial photography and fun,rc_drone.jpg,RC Drone,149.99,10
-43,FOOD,Healthy and organic snacks for guilt-free munching,organic_snacks.jpg,Organic Snacks,5.99,50
-44,ELECTRONICS,Voice-controlled smart speaker with virtual assistant,smart_speaker.jpg,Smart Speaker,129.99,8
-45,CLOTHING,Stylish blue jacket for a fashionable look,jacket_blue.jpg,Jacket Blue,79.99,12
-46,BOOKS,Collection of beautiful and thought-provoking poems,poetry_book.jpg,Poetry Book,19.99,20
-47,SPORT,Professional tennis racket for competitive play,tennis_racket.jpg,Tennis Racket,149.99,5
-48,SPORT,Sturdy bicycle for commuting and recreational rides,bicycle.jpg,Bicycle,299.99,5
-49,SPORT,Spacious backpack for carrying essentials,backpack.jpg,Backpack,39.99,20
+0,ELECTRONICS,Powerful smartphone with advanced features for seamless multitasking and stunning photography. Stay connected with the world using Smartphone XYZ.,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl5yzYIl3LWj7eTxdaDH2HmUnoxwsIf8oD4qz1LxRW4JBNOFG01vTzPwl39th3E-O0G_A&usqp=CAU,Smartphone XYZ,599.99,10
+1,ELECTRONICS,High-performance laptop for professional use, designed to handle complex tasks with ease and efficiency. Boost your productivity with Laptop ABC.,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVC4tdhAbYj_t7UdAfAQf59-C4kqm25__bcrNlI93BSBvERaSLQnvqo2KbXKaWx2a2cBQ&usqp=CAU,Laptop ABC,1299.99,5
+2,CLOTHING,Comfortable t-shirt in red color, made from soft and breathable fabric for a perfect fit all day long. Look stylish and feel great in T-Shirt Red. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGjpiJ-6yJx-iJ7zj2qn7Hg1V2DaATy2IWT5Eoyn8m0677xmbHzpQSLwH6ZouF222Mxg8&usqp=CAU,T-Shirt Red,19.99,50
+3,BOOKS,Popular book with an intriguing story that will captivate your imagination from the first page to the last. Discover the world of mystery in Book XYZ.,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGO3WzCgFEoQJfe6dDflOQcfeEOlpX3uzVgQlXGXJfX6PfQOyBsLxiw-tBxDocNTHqlAs&usqp=CAU,Book XYZ,29.99,20
+4,SPORT,Official soccer ball for matches, featuring high durability and precision control. Play like a pro with Soccer Ball. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdeks4pPzqkkdDRhzQf7nwzoEIwM7b-iBwFA&usqp=CAU,Soccer Ball,24.99,30
+5,TOYS,Remote-controlled toy car for kids, providing hours of entertainment and fostering creativity through play. Let your child's imagination roam with Toy Car. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-L0-hYfSKfeq549_x1LT1LkzIoo52fIIr228H_QoMIPHN1ULsLAXQ_K2Fd3jQwadW18s&usqp=CAU,Toy Car,39.99,15
+6,FOOD,Delicious milk chocolate bar, crafted with the finest ingredients to satisfy your sweet cravings. Indulge in the goodness of Chocolate Bar. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpW0JQrwd8zATSJnFfQpdRnqD0CCOVpWR5kOCZQ8Xf1_ZWn2HcTT-ck-Z0u2D03pUpf8w&usqp=CAU,Chocolate Bar,2.99,100
+7,SPORT,High-quality running shoes for athletes, engineered for optimal performance and support during intense workouts. Reach new heights with Running Shoes.,https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/89afa6a48d7d4732b8daaead00ed1b45_9366/Start_Your_Run_Running_Shoes_Black_GY9234_01_standard.jpg,Running Shoes,79.99,25
+8,ELECTRONICS,Noise-canceling headphones with excellent sound quality, immerse yourself in music and experience the ultimate audio experience. Enjoy every beat with Headphones XYZ. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMK_6ILqcuDMXgGL4hfEY_IDB18-DfBEt61xdaQJujFaJCOCUTYNqrGXkVwApRg9N1UvA&usqp=CAU,Headphones XYZ,149.99,8
+9,CLOTHING,Elegant blue dress for special occasions, designed to make you stand out and exude confidence. Be the center of attention with Dress Blue. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnQW1RWJy7fpy5TMumfa8_8_heJBnLSWSp73RtWKg5wXQjQ_jQBtsVcaj1NhQmb9ViJkg&usqp=CAU,Dress Blue,69.99,12
+10,BOOKS,Thrilling mystery novel with unexpected twists, keeping you on the edge of your seat until the final revelation. Unravel the enigma in Mystery Novel. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3XjBkf9zkwCjL3FKaXEFCuqzpksDZl67HL8LOkw7JhH7JOaJkHaiSTAmyfKTAmfcB6e8&usqp=CAU,Mystery Novel,12.99,30
+11,SPORT,Official basketball for indoor and outdoor use, featuring a superior grip and control for an amazing playing experience. Shoot hoops like a pro with Basketball. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYwUMKwn4-XDB3xU4FT7AZrTO8PirnZgLVXubSMd59jFHyd4w7lCBVTTeN07RhgW_KZMI&usqp=CAU,Basketball,29.99,20
+12,TOYS,Collectible action figure of a popular superhero, meticulously designed with intricate details. Bring the hero to life with Action Figure. ,https://m.media-amazon.com/images/I/71kVIFQfOiL._AC_UF894,1000_QL80_.jpg,Action Figure,49.99,10
+13,FOOD,Freshly roasted coffee beans for the perfect cup of coffee, enticing aroma and rich flavor in every sip. Wake up to the goodness of Coffee Beans. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZL_-kUXYZb5Of3uf8sExOlKlqc7u1a4JywOm_pGs7yigQz0wlCGXT-trnnLwDYmTEPL4&usqp=CAU,Coffee Beans,9.99,50
+14,ELECTRONICS,Portable Bluetooth speaker with great sound quality, take the music with you wherever you go and enjoy powerful audio. Elevate your listening experience with Bluetooth Speaker. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpUi__fKccxs7U4FRbD37mse2hjlHZYm6-coFfg7FuP4ooVsTINJA-DORYaIh4mjfKzK8&usqp=CAU,Bluetooth Speaker,59.99,15
+15,CLOTHING,Classic black jeans for everyday wear, made with premium denim for both comfort and style. Dress up or down with Jeans Black. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN4V3hj8EYcXZAml9alquIVE5SvqUpuSacOOxZE4AzwLtkNfuWXqoHL1HOy2uq8qQuOsg&usqp=CAU,Jeans Black,39.99,30
+16,BOOKS,Beautifully illustrated art book showcasing various artists, a feast for the eyes and a source of inspiration. Immerse yourself in the world of art with Art Book. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBGgmQoB9Fow_vDj4nvmIDHEBoODGJxHsSY93A03yKTPVbrNApB-BI7fo4HvH_ADkKvCM&usqp=CAU,Art Book,34.99,15
+17,SPORT,Official football for matches and training, engineered to deliver outstanding performance and durability. Score goals like a champion with Football. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXNNx0NYBZkJqKedXD4qX0tXWCsVeFSz5tejd8zz89RXzJwpKiY7Ma30jspqThz1O8tDs&usqp=CAU,Football,19.99,25
+18,TOYS,Fun and engaging board game for family and friends, fostering laughter and friendly competition. Create unforgettable memories with Board Game. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX8gvgNW4aU_USKPlfXTMM5zSlLBh8SgPnN_zl15mEHYbora8HQ8saFnhL3vfjgT6pfUM&usqp=CAU,Board Game,39.99,20
+19,FOOD,Healthy and delicious granola bars for a quick snack, packed with nutrients and natural goodness. Nourish your body with Granola Bars. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfXS1P0LPhBsIpDZN2DRnL6-sZSXETEU2jrYfIDtcSoY8wWNu94WfTBS40eL86q_V3Zmc&usqp=CAU,Granola Bars,4.99,50
+20,ELECTRONICS,Comfortable wireless earphones with long battery life, providing immersive sound for your on-the-go lifestyle. Embrace wireless freedom with Wireless Earphones., https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv-dg5wIHn6f6QZR_zKx_wF4g-V8TFa4WjAEu4pjCvXyy51m9BiU_cGlbGbOr-2JoZ750&usqp=CAU,Wireless Earphones,79.99,10
+21,CLOTHING,Cozy gray sweater for chilly days, crafted from soft and warm fabric to keep you snug. Stay stylish and comfortable with Sweater Gray.,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR32XrwQJ_Vz2EVVoGbElC112dF2kvSFP3dP3XNY1tCfFJ__1pxoQuhiChJxGlN6aCPW0E&usqp=CAU,Sweater Gray,49.99,15
+22,BOOKS,Comprehensive cookbook with a wide range of recipes, inspiring both novice and experienced cooks. Delight your taste buds with Cookbook. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9A716OYZ2QyNj2s5oyXHzi3iDkgQwN3Am1IuYKegbGsB3eLD3d5TfRE8yjnqub8bj7Dw&usqp=CAU,Cookbook,24.99,20
+23,SPORT,Professional golf clubs for avid golfers, meticulously designed for precision and power on the greens. Master your swing with Golf Clubs. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWCBTfO8MI0x1elr9sCXJAYu5U9qmgv4f8BNa8lO0fupCjCogrwKhojuwwXJjnKnLbE5A&usqp=CAU,Golf Clubs,299.99,5
+24,TOYS,Challenging puzzle with beautiful artwork, offering hours of brain-teasing fun and relaxation. Unleash your puzzle-solving skills with Puzzle. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl0ltiPl-KhXy-A_TfU0VgNRBaqfpAD_g3FVvq7-YB83Ap8x6uVvFy7TaDQU-OQzE6&usqp=CAU,Puzzle,14.99,30
+25,FOOD,Refreshing energy drink to boost your energy levels, providing a revitalizing kick for your active lifestyle. Stay energized with Energy Drink. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBTeU76wsXCERZDzEuw92EYNddwVQCYYp1gt9povslsqJ0-z3D94T6SDdKqPxoMCUziRk&usqp=CAU,Energy Drink,2.99,100
+26,ELECTRONICS,Multi-functional smartwatch with fitness tracking features, your perfect companion for a healthier and more organized life. Stay connected and motivated with Smart Watch. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQel9syH9Rq6kAvLazQg5kp8i6g1qA6eOoJGSxYd-k6nfxC18qwwYgvwn_2ERZnBTS3cJ8&usqp=CAU,199.99,10
+27,CLOTHING,Stylish pink dress for special occasions, designed to make you look radiant and elegant. Be the belle of the ball with Dress Pink. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUIb0iTHnjl8Z4y1tUGLHQrwcFRJWIuSk7bVEUjIqWMGIglbcSUda9FEo9LGwypaUSku8&usqp=CAU,Dress Pink,79.99,8
+28,BOOKS,Comprehensive travel guide for popular destinations, offering insider tips and captivating insights. Embark on unforgettable adventures with Travel Guide. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNGEOAi_9nuv2seqwmKS0jpC4awutzqxICihg0_jIFdQLFBZ8TkNmGml0uJ1BhzJeXjxQ&usqp=CAU,Travel Guide,19.99,25
+29,SPORT,High-quality yoga mat for comfortable workouts, providing the support and stability you need to deepen your practice. Find your inner zen with Yoga Mat. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8sLbrm0j9DvIQ_TLlqr3CXh75Je7p3lHkZHjGZrvDGQ5TBJut-Iw9VsMOcpJIxh3bCdI&usqp=CAU,Yoga Mat,29.99,20
+30,TOYS,Creative building blocks set for kids' imagination, allowing them to construct endless wonders. Unlock creativity with Building Blocks Set. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1mjhqcqFjmCDPZFBtpwcVlJ3NBU52B-XrmGuSciZ4NNukW3ngpbhr8Ua1ck-L6KGQbCw&usqp=CAU,Building Blocks Set,19.99,30
+31,FOOD,Nutritious protein bars for post-workout recovery, replenishing your energy and aiding muscle repair. Refuel your body with Protein Bars. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXRSw0LDYoWAznVRZikJn5uNDYDscLx2384mCrzOqZsoMPejkL9O3ybcdG2oXL46wr3LQ&usqp=CAU,Protein Bars,3.99,50
+32,ELECTRONICS,Advanced digital camera for capturing stunning photos, offering high-resolution images and innovative features. Unleash your photography skills with Digital Camera. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAB1ozVKA0uyf0O0f6njDMxfeuOXOVisL2hnIG6UUJAd9Rh7KksxiT6rgobr889vgR7xQ&usqp=CAU,Digital Camera,499.99,5
+33,CLOTHING,Stylish white sneakers for a trendy look, combining fashion and comfort effortlessly. Step out in style with Sneakers White. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfb_xGGmZUdyuB7XhWAtf_ezWK0_Wgy36dN7g1eDtIAWWy8EgBk_NxXa01f9QwcUpr8JQ&usqp=CAU,Sneakers White,89.99,12
+34,BOOKS,Inspiring biography of a prominent figure, providing valuable life lessons and motivation. Discover the journey of a legend in Biography Book. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ94O5bhXiqn9nqsTXZk9bUxgFwI5LU2c7yE7CiVjjYRrsJy_dQPp4cPbtsOXoVzbR1CQA&usqp=CAU,Biography Book,14.99,30
+35,SPORT,High-quality baseball glove for fielding, crafted to enhance your performance on the diamond. Catch like a pro with Baseball Glove. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfBhmn1EXOgPPDMbHIdWwmJXJnCI0o5yJcjVFH2JeoTBx4j0AhbE7zncFv-iy0rBiv3bs&usqp=CAU,Baseball Glove,49.99,20
+36,TOYS,Versatile building set for creative play, encouraging children to construct and imagine. Ignite the imagination with Building Set. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVr4cnnpO2GZUUqNg7PqVHWKnEEnzSMIwWVfHE8AIdbt31W7HRxn3LG4whjHec5BE-QOo&usqp=CAU,Building Set,24.99,15
+37,FOOD,Exquisite gourmet chocolate assortment, a delightful treat for discerning chocolate lovers. Indulge in the luxury of Gourmet Chocolate. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8QV7AJY-T5D0Hu70SvNK1XRORVvhx4lvZmyPOWpKfyvr6ol5q_mPzNbk-yB30Ep--VY4&usqp=CAU,Gourmet Chocolate,19.99,50
+38,ELECTRONICS,Portable tablet for work and entertainment, offering convenience and productivity on the go. Stay connected and entertained with Tablet. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmZbKR5KMtMbnGUu7LPkjygjnTvp8mbnFicjWhxMScNeBRO8KQDGr058EAbR2FWE6t50E&usqp=CAU,Tablet,299.99,8
+39,CLOTHING,Classic black suit for formal occasions, tailored to perfection for a dashing and sophisticated look. Make a lasting impression with Suit Black. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFMgkDBwLg3N8Vs3IWXl3VzXr7kDuZkaazCUMTLDliJv0btbNLlzZacMeeohTwRIdoQFE&usqp=CAU,Suit Black,199.99,10
+40,BOOKS,Comprehensive art history book with stunning visuals, providing a captivating journey through artistic eras. Immerse yourself in the world of art with Art History Book. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlbcYm8EmBi4v454Fuvf8CwhmbUqMpTruv9-Vnvgb39qpGk77BKy8Um_hSbWa_k4OZ9EA&usqp=CAU,Art History Book,39.99,12
+41,SPORT,Convenient strap for carrying and storing yoga mats, making your fitness journey hassle-free. Transport your yoga mat with ease using Yoga Mat Strap. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuoz8r_gELYgOl-14wPhJXvzYseKJZgFVcn6DK5rDJhuzG7SgazpnCuPok34NO1dXbgxo&usqp=CAU,Yoga Mat Strap,9.99,25
+42,TOYS,Remote-controlled drone for aerial photography and fun, capturing breathtaking moments from the sky. Explore new heights with RC Drone. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHMxq3GGbRi6vdEz6rw2YG5UWXnSMM8iRifC2qPES_e1VPQa7LHef6i_sdybmeS3gGkuI&usqp=CAU,RC Drone,149.99,10
+43,FOOD,Healthy and organic snacks for guilt-free munching, offering a delicious blend of taste and nutrition. Snack smarter with Organic Snacks. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr92vkYjQykp4JqeACiw2B0djMn2l5qtl3PELuyFJEjQkvyOLfWzTmffdSzCeHGWNJ5vc&usqp=CAU,Organic Snacks,5.99,50
+44,ELECTRONICS,Voice-controlled smart speaker with virtual assistant, bringing convenience and entertainment to your home. Experience the future with Smart Speaker. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs0idI5hqgn61kETgZXni-eOlxodvQMxDRAHsm5J576HQ1Le-JWzFteY9Z3wtncwv7bE0&usqp=CAU,Smart Speaker,129.99,8
+45,CLOTHING,Stylish blue jacket for a fashionable look, perfect for all seasons and occasions. Elevate your style with Jacket Blue. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4bp-20Ak08aCvRFIRuu8FOMucwCm59sAGo5rHQ8GEvmqJXwSKaec4axXXn8GUvxf9mlw&usqp=CAU,Jacket Blue,79.99,12
+46,BOOKS,Collection of beautiful and thought-provoking poems, offering a glimpse into the realm of emotions and imagination. Get inspired by Poetry Book. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgFRyEph0vehlt1vosKmGyNZT2V7IwWzq86RHPYexu-km41rkt7wnQhCqQDC892aedkgg&usqp=CAU,Poetry Book,19.99,20
+47,SPORT,Professional tennis racket for competitive play, designed for power, control, and precision shots. Serve and volley like a pro with Tennis Racket. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJQM2Z0kV4kaPxXO3I9ucgJYEBea78g9l2fOh7Ff5MbrJFHHSGhMxFfd2N55VesrW3T5U&usqp=CAU,Tennis Racket,149.99,5
+48,SPORT,Sturdy bicycle for commuting and recreational rides, providing a smooth and enjoyable cycling experience. Pedal your way to adventure with Bicycle. ,https://www.lekkerbikes.us/cdn/shop/products/amsterdam-3speed-conventional-satin-black-hero.png?v=1671634002&width=440,Bicycle,299.99,5
+49,SPORT,Spacious backpack for carrying essentials, ensuring comfort and convenience during your daily adventures. Gear up for success with Backpack. ,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL7ELKwTdifiNyoZZICu9GiHjFfo8VKiN0NC-ocFUWPiEvOnqoeu71OAzRsglknIKlzkc&usqp=CAU,Backpack,39.99,20

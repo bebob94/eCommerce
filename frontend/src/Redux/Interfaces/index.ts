@@ -52,6 +52,19 @@ export interface address {
   houseNumber: number;
   cap: string;
 }
+export interface newAddress {
+  state: string;
+  city: string;
+  street: string;
+  region: string;
+  houseNumber: number;
+  cap: string;
+}
+
+export interface MyAddress {
+  AllAddressesByUser: address[];
+  address: address;
+}
 
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< PRODUCTS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 export interface MyProduct {

@@ -1,11 +1,14 @@
 package com.eCommerce.server.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -14,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.eCommerce.server.entity.Address;
+import com.eCommerce.server.entity.Review;
 import com.eCommerce.server.payload.AddressDto;
 import com.eCommerce.server.service.AddressService;
 
@@ -58,4 +62,26 @@ public class AddressController {
 	public ResponseEntity<String> deleteAddress( @PathVariable Long id){
 		return new ResponseEntity<String>(addressService.removeAddressById(id), HttpStatus.OK);
 	}
+	
+	//<<<<<<<<<<<<<<<<<<<<<<<<< METODI GET>>>>>>>>>>>>>>>>>>>>>>>>>
+	@GetMapping("/{id}")
+	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+	public ResponseEntity<Address> getProductById(@PathVariable Long id){
+		return new ResponseEntity<Address>(addressService.findAddressById(id),HttpStatus.OK);
+	}
+	
+	@GetMapping("/all")
+	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+	public ResponseEntity<List<Address>> getAllAddresses() {
+		return new ResponseEntity<List<Address>>(addressService.findAllAddresses(),HttpStatus.OK);
+	}	
+	@GetMapping("/all/{id}")
+	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+	public ResponseEntity<List<Address>> AllAddressesByUserId(@PathVariable Long id) {
+		return new ResponseEntity<List<Address>>(addressService.findAllAddressesByUserId(id),HttpStatus.OK);
+	}	
+	
+	
 }
+
+

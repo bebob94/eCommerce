@@ -4,11 +4,13 @@ import storage from "redux-persist/es/storage";
 import { userReducer } from "../Reducers";
 import { UserReducer } from "../Reducers/User";
 import { ProductsReducer } from "../Reducers/products";
+import { AddressReducer } from "../Reducers/address";
 
 const reducers = combineReducers({
   user: userReducer,
   User: UserReducer,
   products: ProductsReducer,
+  address: AddressReducer,
 });
 
 const persistConfig = {

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.eCommerce.auth.entity.User;
 import com.eCommerce.auth.repository.UserRepository;
 import com.eCommerce.server.entity.Address;
+import com.eCommerce.server.entity.Review;
 import com.eCommerce.server.payload.AddressDto;
 import com.eCommerce.server.repository.AddressRepository;
 
@@ -59,6 +60,16 @@ public class AddressService {
 		}else {
 			return addressRepo.findById(id).get();
 		}
+	}
+	
+//	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< CERCA TUTTI GLI ADDRESSES>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	public List<Address> findAllAddresses() {
+		return (List<Address>) addressRepo.findAll();
+	}
+//	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< CERCA TUTTI GLI ADDRESSES DI UN USER>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	public List<Address> findAllAddressesByUserId(Long userId) {
+		User u= userRepo.findById(userId).get();
+		return u.getAddress();
 	}
 	
 //	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< MODIFICA ADDRESS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

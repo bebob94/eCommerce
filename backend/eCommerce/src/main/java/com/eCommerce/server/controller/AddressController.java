@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.eCommerce.server.entity.Address;
-import com.eCommerce.server.entity.Review;
 import com.eCommerce.server.payload.AddressDto;
 import com.eCommerce.server.service.AddressService;
 

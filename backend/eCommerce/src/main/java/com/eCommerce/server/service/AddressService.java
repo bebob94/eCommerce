@@ -84,12 +84,20 @@ public class AddressService {
 
 //	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< RIMUOVI ADDRESS PER ID >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 	public String removeAddressById(Long id) {
-		if (!addressRepo.existsById(id)) {
-			throw new EntityNotFoundException("Address not exists!!!");
-		} else {
-			addressRepo.deleteById(id);
-			return "Address delete";
-		}
+	    if (!addressRepo.existsById(id)) {
+	        throw new EntityNotFoundException("Address not exists!!!");
+	    } else {
+	        Address addressToRemove = addressRepo.findById(id).orElse(null);
+	        if (addressToRemove != null) {
+	            List<User> users = addressToRemove.getUsers();
+	            for (User user : users) {
+	                user.getAddress().remove(addressToRemove);
+	            }
+	            userRepo.saveAll(users); // Salva gli utenti aggiornati senza l'indirizzo da rimuovere
+	        }
+	        addressRepo.deleteById(id); // Ora puoi eliminare l'indirizzo
+	        return "Address delete";
+	    }
 	}
 
 }

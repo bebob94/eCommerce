@@ -1,6 +1,6 @@
 import { PayloadAction } from "@reduxjs/toolkit";
 import { MyAddress, address } from "../Interfaces";
-import { ADDRESS_BY_ID, ALL_ADDRESSES } from "../ActionType/address";
+import { ADDRESS, ALL_ADDRESSES } from "../ActionType/address";
 
 const inizialState: MyAddress = {
   AllAddressesByUser: [],
@@ -17,7 +17,7 @@ export const AddressReducer = (
         ...state,
         AllAddressesByUser: action.payload as address[],
       };
-    case ADDRESS_BY_ID:
+    case ADDRESS:
       return {
         ...state,
         address: action.payload as address,

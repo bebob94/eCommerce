@@ -1,7 +1,7 @@
 import { newAddress } from "../Interfaces";
 
 export const ALL_ADDRESSES = "ALL_ADDRESSES";
-export const ADDRESS_BY_ID = "ADDRESS_BY_ID";
+export const ADDRESS = "ADDRESS";
 
 export const allAddresses = async (token: string) => {
   try {
@@ -72,4 +72,15 @@ export const postAddress = async (
   } catch (error) {
     console.log(error);
   }
+};
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< DELETE ADDRESS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+export const deleteAddress = async (id: number, token: String) => {
+  const requestOptions = await fetch(`http://localhost:8080/address/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
 };

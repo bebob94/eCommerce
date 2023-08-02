@@ -6,10 +6,22 @@ import {
   productsByCategory,
 } from "../../Redux/ActionType/products";
 import position from "../../icons8-position-50.png";
+import {
+  ADDRESS,
+  ALL_ADDRESSES,
+  addressById,
+  allAddressesByUser,
+} from "../../Redux/ActionType/address";
+import { Link } from "react-router-dom";
 
 const Product = () => {
   const dispatch = useDispatch();
+  const User = useSelector((state: RootState) => state?.User.user);
   const user = useSelector((state: RootState) => state?.user.user);
+  const allAddresses = useSelector(
+    (state: RootState) => state?.address.AllAddressesByUser
+  );
+  const address = useSelector((state: RootState) => state?.address.address);
   const product = useSelector((state: RootState) => state?.products.product);
 
   const maxQuantity = product.quantity;
@@ -61,6 +73,20 @@ const Product = () => {
 
   useEffect(() => {
     (async () => {
+      let data = await allAddressesByUser(user.accessToken, User.id);
+      dispatch({
+        type: ALL_ADDRESSES,
+        payload: data,
+      });
+    })();
+    (async () => {
+      let data = await addressById(allAddresses[0]?.id, user.accessToken);
+      dispatch({
+        type: ADDRESS,
+        payload: data,
+      });
+    })();
+    (async () => {
       let data = await productsByCategory(product.category, user.accessToken);
       dispatch({
         type: PRODUCTS_BY_CATEGORY,
@@ -89,7 +115,7 @@ const Product = () => {
   };
 
   return (
-    <div className="flex pt-10 justify-between mx-auto bg-white  h-screen">
+    <div className="flex pt-10 justify-between mx-auto bg-white  h-screen ">
       <div className="w-2/5 h-52 flex justify-center">
         <img src={product.image} alt={product.name} className="  w-96 h-96" />
       </div>
@@ -162,9 +188,16 @@ const Product = () => {
             new Date(todayDate.getTime() + 4 * 24 * 60 * 60 * 1000)
           )}
         </p>
-        <p className="mt-5">
-          <img src={position} alt="position" className="h-6" />
-        </p>
+        <div className="flex mt-5">
+          <img src={position} alt="position" className="h-5" />
+          <Link to={"/Addresses"}>
+            <p className="text-xs mt-1 ml-3 cursor-pointer text-blue-500 hover:text-red-500">
+              {" "}
+              invia a {`${user.username} - ${address?.city} ${address?.cap} `}
+            </p>
+          </Link>
+        </div>
+
         <p className="mt-5 mb-2 text-xl text-green-700">
           Disponibilità immediata
         </p>

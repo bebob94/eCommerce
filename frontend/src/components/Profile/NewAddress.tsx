@@ -5,10 +5,12 @@ import { newAddress } from "../../Redux/Interfaces";
 import { postAddress } from "../../Redux/ActionType/address";
 import { RootState } from "../../Redux/Store";
 import { useSelector } from "react-redux";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const NewAddress = () => {
   const User = useSelector((state: RootState) => state?.User.user);
   const user = useSelector((state: RootState) => state?.user.user);
+  const navigate = useNavigate();
   const [state, setState] = useState<string>("Seleziona uno stato");
   const [city, setCity] = useState<string>("");
   const [street, setStreet] = useState<string>("");
@@ -32,6 +34,8 @@ const NewAddress = () => {
         addressPayload,
         User.id
       );
+      alert("Indirizzo aggiunto con successo");
+      navigate("/Addresses");
     } catch (error) {
       console.log(error);
     }
@@ -54,13 +58,13 @@ const NewAddress = () => {
   }, [state]);
 
   return (
-    <div className="mt-10 mx-auto w-1/3">
+    <div className="mt-5 mx-auto w-1/3 h-full">
       <p className="text-3xl text-center font-medium w-full mb-8">
         Aggiungi un nuovo indirizzo
       </p>
       <form>
         <div>
-          <p className="mb-2 font-semibold">Stato</p>
+          <p className="mb-1 font-semibold">Stato</p>
           <Select
             options={countryOptions}
             value={
@@ -71,8 +75,8 @@ const NewAddress = () => {
             onChange={changeHandler}
           />
         </div>
-        <div className="mt-5">
-          <p className="mb-2 font-semibold">Città</p>
+        <div className="mt-3">
+          <p className="mb-1 font-semibold">Città</p>
           <input
             type="text"
             id="city"
@@ -84,8 +88,8 @@ const NewAddress = () => {
             onChange={(e) => setCity(e.target.value)}
           />
         </div>
-        <div className="mt-5">
-          <p className="mb-2 font-semibold">Indirizzo</p>
+        <div className="mt-3">
+          <p className="mb-1 font-semibold">Indirizzo</p>
           <input
             type="text"
             id="street"
@@ -97,22 +101,22 @@ const NewAddress = () => {
             onChange={(e) => setStreet(e.target.value)}
           />
         </div>
-        <div className="mt-5">
-          <p className="mb-2 font-semibold">Regione</p>
+        <div className="mt-3">
+          <p className="mb-1 font-semibold">Provincia</p>
           <input
             type="text"
             id="region"
             autoComplete="off"
-            placeholder="Regione"
+            placeholder="Provincia"
             required
             value={region}
             className=" w-full"
             onChange={(e) => setRegion(e.target.value)}
           />
         </div>
-        <div className="mt-5 flex justify-between">
+        <div className="mt-3 flex justify-between">
           <span>
-            <p className="mb-2 font-semibold">Numero civico</p>
+            <p className="mb-1 font-semibold">Numero civico</p>
             <input
               type="number"
               id="houseNumber"
@@ -124,7 +128,7 @@ const NewAddress = () => {
             />
           </span>{" "}
           <span>
-            <p className="mb-2 font-semibold">Cap</p>
+            <p className="mb-1 font-semibold">Cap</p>
             <input
               type="text"
               id="cap"

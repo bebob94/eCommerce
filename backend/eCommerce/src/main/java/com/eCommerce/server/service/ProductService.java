@@ -46,9 +46,9 @@ public class ProductService {
 	}
 	
 //	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< CERCA PRODUCT PER PARTE DI NOME >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-	public List<Product> findByNameContains(String s){
-		return productRepo.findByNameContains(s);
-	}
+	public List<Product> findByNameContainsIgnoreCase(String s) {
+        return productRepo.findByNameContainsIgnoreCase(s);
+    }
 	
 	
 //	<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< CERCA TUTTI I PRODUCT>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

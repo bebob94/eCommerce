@@ -24,15 +24,6 @@ const Products = () => {
     });
   };
 
-  useEffect(() => {
-    (async () => {
-      let data = await allProducts(user.accessToken);
-      dispatch({
-        type: ALL_PRODUCTS,
-        payload: data,
-      });
-    })();
-  }, []);
   return (
     <div className=" mt-5">
       {" "}

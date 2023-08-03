@@ -62,7 +62,7 @@ const Addresses = () => {
   }, []);
 
   return (
-    <div className="mt-10 mx-40 h-full">
+    <div className="mt-10 mx-40 ">
       <p className="text-4xl font-medium  w-full mb-8"> I miei Indirizzi</p>
 
       <div className="grid grid-cols-3 gap-4 text-gray-400">

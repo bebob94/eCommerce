@@ -91,3 +91,8 @@ export interface review {
   valutation: number;
   published: Date;
 }
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< CART >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+export interface MyCart {
+  allProducts: products[];
+}

@@ -85,7 +85,7 @@ public class ProductController {
 		@GetMapping("/name/{imp}")
 		@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
 		public ResponseEntity<List<Product>> findByNameContains(@PathVariable String imp){
-			return new ResponseEntity<List<Product>>(productService.findByNameContains(imp),
+			return new ResponseEntity<List<Product>>(productService.findByNameContainsIgnoreCase(imp),
 					HttpStatus.OK);
 		}
 		

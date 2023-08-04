@@ -1,6 +1,8 @@
 export const ALL_PRODUCTS = "ALL_PRODUCTS";
 export const PRODUCT_BY_ID = "PRODUCT_BY_ID";
 export const PRODUCTS_BY_CATEGORY = "PRODUCTS_BY_CATEGORY";
+export const ADD_TO_CART = "ADD_TO_CART";
+export const EMPTY_CART = "EMPTY_CART";
 
 export const allProducts = async (token: String) => {
   try {

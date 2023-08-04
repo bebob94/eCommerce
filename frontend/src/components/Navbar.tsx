@@ -13,6 +13,7 @@ const Navbar = () => {
   const [search, setSearch] = useState("");
   const User = useSelector((state: RootState) => state?.User?.user);
   const user = useSelector((state: RootState) => state?.user.user);
+  const cart = useSelector((state: RootState) => state?.cart.allProducts);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< USE_NAVIGATE, USE_SELECTORE, USE_STATE, USE_DISPATCH >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -91,14 +92,24 @@ const Navbar = () => {
         {user && user?.username ? (
           <>
             <div className="flex items-center justify-between ">
-              <div className="flex items-center font-serif font-medium mr-8">
-                Carrello{" "}
-                <img
-                  src={carrello}
-                  alt="carrello"
-                  className="h-10 ml-3 text-white"
-                />
-              </div>
+              <Link to={"/Cart"} className="cursor-pointer m-0">
+                {" "}
+                <div className="flex items-center font-serif font-medium mr-8">
+                  Carrello{" "}
+                  <img
+                    src={carrello}
+                    alt="carrello"
+                    className="h-10 ml-3 text-white"
+                  />
+                  {cart.length > 0 ? (
+                    <span className="text-black relative right-5 font-mono font-bold pb-1">
+                      {cart.length}
+                    </span>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              </Link>
 
               <button
                 type="button"

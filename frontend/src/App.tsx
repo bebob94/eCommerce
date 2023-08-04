@@ -9,6 +9,7 @@ import Products from "./components/Products/Products";
 import Dashboard from "./components/Profile/Dashboard";
 import Addresses from "./components/Profile/Addresses";
 import NewAddress from "./components/Profile/NewAddress";
+import Cart from "./components/Cart&Order/Cart";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/Dashboard" element={<Dashboard />} />
           <Route path="/Addresses" element={<Addresses />} />
           <Route path="/NewAddress" element={<NewAddress />} />
+          <Route path="/Cart" element={<Cart />} />
         </Routes>
       </BrowserRouter>
     </div>

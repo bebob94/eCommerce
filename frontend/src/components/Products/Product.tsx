@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../Redux/Store";
 import { useEffect, useState } from "react";
 import {
+  ADD_TO_CART,
   PRODUCTS_BY_CATEGORY,
   productsByCategory,
 } from "../../Redux/ActionType/products";
@@ -13,6 +14,7 @@ import {
   allAddressesByUser,
 } from "../../Redux/ActionType/address";
 import { Link } from "react-router-dom";
+import { products } from "../../Redux/Interfaces";
 
 const Product = () => {
   const dispatch = useDispatch();
@@ -23,14 +25,13 @@ const Product = () => {
   );
   const address = useSelector((state: RootState) => state?.address.address);
   const product = useSelector((state: RootState) => state?.products.product);
+  const [todayDate, setTodayDate] = useState(new Date());
 
   const maxQuantity = product.quantity;
   const quantityOption = [];
   for (let i = 0; i < maxQuantity; i++) {
     quantityOption.push(i + 1);
   }
-
-  const [todayDate, setTodayDate] = useState(new Date());
 
   const formatTime = (time: string) => {
     return time?.substring(0, 12);
@@ -69,6 +70,13 @@ const Product = () => {
       );
     }
     return stars;
+  };
+
+  const addToCart = (e: products) => {
+    dispatch({
+      type: ADD_TO_CART,
+      payload: e,
+    });
   };
 
   useEffect(() => {
@@ -219,6 +227,7 @@ const Product = () => {
         </span>
         <div className="flex justify-center mt-10">
           <button
+            onClick={(e) => addToCart(product)}
             type="button"
             className="text-white h-10 w-40 bg-orange-500 hover:bg-orange-800 focus:outline-none focus:ring-4 focus:ring-orange-300 font-medium rounded-full text-sm  text-center mr-2 mb-2 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-900"
           >

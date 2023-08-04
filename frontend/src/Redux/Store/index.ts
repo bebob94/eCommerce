@@ -5,12 +5,14 @@ import { userReducer } from "../Reducers";
 import { UserReducer } from "../Reducers/User";
 import { ProductsReducer } from "../Reducers/products";
 import { AddressReducer } from "../Reducers/address";
+import { cartReducer } from "../Reducers/cart";
 
 const reducers = combineReducers({
   user: userReducer,
   User: UserReducer,
   products: ProductsReducer,
   address: AddressReducer,
+  cart: cartReducer,
 });
 
 const persistConfig = {

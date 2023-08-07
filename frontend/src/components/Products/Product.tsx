@@ -23,9 +23,13 @@ const Product = () => {
   const allAddresses = useSelector(
     (state: RootState) => state?.address.AllAddressesByUser
   );
+  const cartProduct = useSelector(
+    (state: RootState) => state?.cart.allProducts
+  );
   const address = useSelector((state: RootState) => state?.address.address);
   const product = useSelector((state: RootState) => state?.products.product);
   const [todayDate, setTodayDate] = useState(new Date());
+  const [myQuantity, setMyQuantity] = useState(1);
 
   const maxQuantity = product.quantity;
   const quantityOption = [];
@@ -72,10 +76,10 @@ const Product = () => {
     return stars;
   };
 
-  const addToCart = (e: products) => {
+  const addToCart = (product: products, quantity: number) => {
     dispatch({
       type: ADD_TO_CART,
-      payload: e,
+      payload: { product, quantity },
     });
   };
 
@@ -217,9 +221,10 @@ const Product = () => {
             id="quantity"
             tabIndex={0}
             className="border-2 border-solid border-black ml-3 rounded-md"
+            onChange={(e) => setMyQuantity(parseInt(e.target.value))}
           >
             {quantityOption.map((quantity) => (
-              <option key={quantity} value="quantity">
+              <option key={quantity} value={quantity}>
                 {quantity}
               </option>
             ))}
@@ -227,7 +232,7 @@ const Product = () => {
         </span>
         <div className="flex justify-center mt-10">
           <button
-            onClick={(e) => addToCart(product)}
+            onClick={(e) => addToCart(product, myQuantity)}
             type="button"
             className="text-white h-10 w-40 bg-orange-500 hover:bg-orange-800 focus:outline-none focus:ring-4 focus:ring-orange-300 font-medium rounded-full text-sm  text-center mr-2 mb-2 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-900"
           >

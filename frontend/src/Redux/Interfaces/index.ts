@@ -95,4 +95,5 @@ export interface review {
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< CART >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 export interface MyCart {
   allProducts: products[];
+  quantity: number[];
 }

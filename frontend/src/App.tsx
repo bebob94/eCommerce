@@ -10,6 +10,7 @@ import Dashboard from "./components/Profile/Dashboard";
 import Addresses from "./components/Profile/Addresses";
 import NewAddress from "./components/Profile/NewAddress";
 import Cart from "./components/Cart&Order/Cart";
+import Settings from "./components/Profile/Settings";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/Addresses" element={<Addresses />} />
           <Route path="/NewAddress" element={<NewAddress />} />
           <Route path="/Cart" element={<Cart />} />
+          <Route path="/Settings" element={<Settings />} />
         </Routes>
       </BrowserRouter>
     </div>

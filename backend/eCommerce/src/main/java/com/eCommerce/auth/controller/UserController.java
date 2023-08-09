@@ -62,13 +62,15 @@ public class UserController {
 		
 		//<<<<<<<<<<<<<<<<<<<<<<<<< INIZIO METODI PUT>>>>>>>>>>>>>>>>>>>>>>>>>
 		@PutMapping()
-		@PreAuthorize("hasRole('ADMIN') or hasRole('ADMIN') ")
+		@PreAuthorize("hasRole('ADMIN') or hasRole('USER') ")
 		public ResponseEntity<?> updateUser(@RequestBody User u) {
 		    User existingUser = userService.findUserById(u.getId());
 
 		    if (existingUser != null) {
 		        existingUser.setName(u.getName());
 		        existingUser.setImage(u.getImage());
+		        existingUser.setAddress(u.getAddress());
+		        existingUser.setEmail(u.getEmail());
 
 		        User updatedUser = userService.updateUser(existingUser);
 

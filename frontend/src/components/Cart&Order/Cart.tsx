@@ -1,5 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import { EMPTY_CART, REMOVE_FROM_CART } from "../../Redux/ActionType/products";
+import {
+  EMPTY_CART,
+  REMOVE_FROM_CART,
+  UPDATE_QUANTITY,
+} from "../../Redux/ActionType/products";
 import { RootState } from "../../Redux/Store";
 import { products } from "../../Redux/Interfaces";
 
@@ -61,12 +65,28 @@ const Cart = () => {
                 </p>
 
                 <div key={i} className="flex justify-between">
-                  <p className="mt-5 text-3xl font-bold text-gray-900 dark:text-white">
+                  <p className="mt-5  text-3xl font-bold text-gray-900 dark:text-white">
                     {product?.price}€
                   </p>
-                  <p className="mt-5 mr-5 text-xl font-bold text-gray-900 dark:text-white ">
-                    Quantità: {cart.quantity[i]}
-                  </p>
+                  <span className="mt-5 px-3 flex justify-between text-xl font-bold text-gray-900 dark:text-white">
+                    <p className="mt-2 mr-3">Quantità:</p>
+                    <input
+                      type="number"
+                      className="border-2  w-12 text-center border-solid border-black  rounded-md"
+                      value={cart.quantity[i]}
+                      onChange={(e) =>
+                        dispatch({
+                          type: UPDATE_QUANTITY,
+                          payload: {
+                            product,
+                            quantity: parseInt(e.target.value), // Assicurati di convertire in un numero
+                          },
+                        })
+                      }
+                      min={1} // Imposta il minimo a 1 o un valore appropriato
+                      max={product.quantity} // Imposta il massimo alla quantità massima del prodotto
+                    />
+                  </span>
                 </div>
                 <div>
                   <p

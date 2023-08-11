@@ -1,10 +1,24 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../Redux/Store";
+import ChangeNameModal from "../Modals/ChangeNameModal";
+import { USER_BY_USERNAME, userByUsername } from "../../Redux/ActionType/User";
+import { useEffect } from "react";
 
 const Settings = () => {
+  const dispatch = useDispatch();
+  const user = useSelector((state: RootState) => state?.user.user);
   const User = useSelector((state: RootState) => state?.User.user);
   const myAddress = useSelector((state: RootState) => state?.address.address);
 
+  useEffect(() => {
+    (async () => {
+      let data = await userByUsername(user.username, user.accessToken);
+      dispatch({
+        type: USER_BY_USERNAME,
+        payload: data,
+      });
+    })();
+  }, []);
   return (
     <div className="m-10  h-full ">
       <p className="text-4xl text-center font-medium  ">Utente</p>
@@ -15,9 +29,7 @@ const Settings = () => {
             <p>{User.name}</p>
           </div>
           <div>
-            <button className="mt-3 rounded-md shadow-2xl py-2 px-5 mr-3 border-black border-solid border-2">
-              modifica
-            </button>
+            <ChangeNameModal />
           </div>
         </div>{" "}
         <hr />
@@ -36,7 +48,13 @@ const Settings = () => {
         <div className="my-6 flex justify-between">
           <div>
             <p>Indirizzo:</p>
-            <p>{myAddress.street + myAddress.houseNumber}</p>
+            <p>
+              {myAddress.street +
+                " " +
+                myAddress.houseNumber +
+                " " +
+                myAddress.city.toUpperCase()}
+            </p>
           </div>
           <div>
             <button className="mt-3 rounded-md shadow-lg  py-2 px-5 mr-3 border-black border-solid border-2">

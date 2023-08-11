@@ -38,8 +38,9 @@ export interface user {
 export interface userChange {
   id?: number;
   name: string;
-  surname: string;
-  indirizzo: string;
+  image: string;
+  indirizzo: address[];
+  email: string;
 }
 
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< ADDRESS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

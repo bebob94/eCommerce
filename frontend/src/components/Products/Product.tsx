@@ -15,6 +15,7 @@ import {
 } from "../../Redux/ActionType/address";
 import { Link } from "react-router-dom";
 import { products } from "../../Redux/Interfaces";
+import ModalPostReview from "../Modals/ModalPostReview";
 
 const Product = () => {
   const dispatch = useDispatch();
@@ -144,7 +145,7 @@ const Product = () => {
         </div>
 
         <div>
-          <p className="text-2xl font-semibold my-5 ">Some reviews...</p>
+          <p className="text-2xl font-semibold my-2 ">Some reviews...</p>
           {product.review.map((rev) => (
             <article
               key={rev.id}
@@ -165,23 +166,18 @@ const Product = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex items-center mb-1">
+              <div className="flex items-center mb-3">
                 {renderStars(rev?.valutation)}
               </div>
 
-              <p className="mb-2 text-gray-500 dark:text-gray-400"></p>
-              <p className="mb-2 text-gray-500 dark:text-gray-400">
+              <p className="my-2 text-gray-500 dark:text-gray-400">
                 {rev.comment}
               </p>
-
-              <a
-                href="#"
-                className="block mb-5 text-sm font-medium text-blue-600 hover:underline dark:text-blue-500"
-              >
-                Read more
-              </a>
             </article>
           ))}
+          <div className="my-3">
+            <ModalPostReview productId={product.id} />
+          </div>
         </div>
       </div>
 
@@ -237,14 +233,6 @@ const Product = () => {
             className="text-white h-10 w-40 bg-orange-500 hover:bg-orange-800 focus:outline-none focus:ring-4 focus:ring-orange-300 font-medium rounded-full text-sm  text-center mr-2 mb-2 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-900"
           >
             Aggiungi al carrello
-          </button>
-        </div>
-        <div className="flex justify-center mt-5">
-          <button
-            type="button"
-            className="text-white h-10 w-40 bg-orange-600 hover:bg-orange-800 focus:outline-none focus:ring-4 focus:ring-orange-300 font-medium rounded-full text-sm  text-center mr-2 mb-2 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-900"
-          >
-            Acquista ora
           </button>
         </div>
       </div>

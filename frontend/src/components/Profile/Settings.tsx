@@ -10,7 +10,7 @@ const Settings = () => {
   const dispatch = useDispatch();
   const user = useSelector((state: RootState) => state?.user.user);
   const User = useSelector((state: RootState) => state?.User.user);
-  const myAddress = useSelector((state: RootState) => state?.address.address);
+  const myAddress = useSelector((state: RootState) => state?.address?.address);
 
   useEffect(() => {
     (async () => {

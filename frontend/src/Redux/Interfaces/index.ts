@@ -93,13 +93,58 @@ export interface review {
   published: Date;
 }
 
+export interface postReview {
+  user_id: number;
+  product_id: number;
+  comment: string;
+  valutation: number;
+}
+
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< CART >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 export interface MyCart {
   allProducts: products[];
   quantity: number[];
 }
 
-// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< CART >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< IMAGE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 export interface FormData {
   file: File | null;
+}
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< ORDER >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+export interface OrderState {
+  order: ShoppingOrderList[];
+}
+
+export interface ShoppingOrderList {
+  id: number;
+  user: User;
+  initializedOrder: Date;
+  scheduledDelivery: Date;
+  address: address;
+  orderLine: OrderLine[];
+  totalPrice: number;
+  status: ShippingMethod;
+  shippingMethod: ShippingMethod;
+  paymentMethod: PaymentMethod[];
+}
+
+export interface OrderLine {
+  id: number;
+  product: products;
+  quantity: number;
+  price: number;
+}
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< PAYMENT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+export interface ShippingMethod {
+  id: number;
+  name: string;
+}
+
+export interface PaymentMethod {
+  id: number;
+  provider: string;
+  create_time: Date;
+  status: string;
 }

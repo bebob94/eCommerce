@@ -103,13 +103,21 @@ const Cart = () => {
       ) : (
         <p className="text-4xl font-medium  w-full ">Carrello vuoto</p>
       )}
-      <div className="w-1/5 bg-white mt-16 rounded-md h-40">
+      <div className="w-1/5 bg-white mt-16 rounded-md h-52">
         <p className="mt-5 mx-2 font-mono font-semibold text-md">
           Totale provvisorio ({cart.allProducts.length} articoli):
         </p>
         <p className="mt-5 mx-2 font-mono font-bold text-lg">
           {calculateTotal()}€
         </p>
+        <div className="flex justify-center mt-5">
+          <button
+            type="button"
+            className="text-white h-10 w-40 bg-orange-600 hover:bg-orange-800 focus:outline-none focus:ring-4 focus:ring-orange-300 font-medium rounded-full text-sm  text-center mr-2 mb-2 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-900"
+          >
+            Acquista ora
+          </button>
+        </div>
       </div>
     </div>
   );

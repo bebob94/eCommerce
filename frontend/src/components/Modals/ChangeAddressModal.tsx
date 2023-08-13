@@ -34,17 +34,16 @@ const ChangeAddressModal = ({ addressId }: { addressId: number }) => {
   const handleClose = () => setShow(false);
 
   const handleSubmit = async () => {
+    const payload: address = {
+      id: addressId,
+      state,
+      city,
+      street,
+      region,
+      houseNumber,
+      cap,
+    };
     try {
-      const payload: address = {
-        id: addressId,
-        state,
-        city,
-        street,
-        region,
-        houseNumber,
-        cap,
-      };
-
       const response = await changeMyAddressInfo(payload, User.accessToken);
       (async () => {
         let data = await addressById(addressId, User.accessToken);

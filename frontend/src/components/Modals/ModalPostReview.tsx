@@ -1,36 +1,35 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../Redux/Store";
-import {
-  USER_BY_USERNAME,
-  changeMyProfileInfo,
-  userByUsername,
-} from "../../Redux/ActionType/User";
+import { postReview } from "../../Redux/Interfaces";
+import { postReviews } from "../../Redux/ActionType/review";
+import { PRODUCT_BY_ID, productById } from "../../Redux/ActionType/products";
 
-const ChangeNameModal = () => {
+const ModalPostReview = ({ productId }: { productId: number }) => {
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
-  const [myName, setMyName] = useState("");
+  const [myComment, setMyComment] = useState("");
+  const [myValutation, setMyValutation] = useState(0);
   const user = useSelector((state: RootState) => state?.User.user);
   const User = useSelector((state: RootState) => state?.user.user);
+  const product = useSelector((state: RootState) => state?.products.product);
 
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
 
   const handleSubmit = async () => {
-    const payload = {
-      id: user.id,
-      name: myName,
-      image: user.image,
-      indirizzo: [...user.address],
-      email: user.email,
+    const payload: postReview = {
+      user_id: user.id,
+      product_id: productId,
+      comment: myComment,
+      valutation: myValutation,
     };
     try {
-      const response = await changeMyProfileInfo(payload, User.accessToken);
+      const response = await postReviews(payload, User.accessToken);
       (async () => {
-        let data = await userByUsername(User.username, User.accessToken);
+        let data = await productById(productId, User.accessToken);
         dispatch({
-          type: USER_BY_USERNAME,
+          type: PRODUCT_BY_ID,
           payload: data,
         });
       })();
@@ -49,7 +48,7 @@ const ChangeNameModal = () => {
         type="button"
         onClick={handleShow}
       >
-        Modifica
+        Aggiungi recensione
       </button>
       <div
         style={{ display: show ? "block" : "none" }}
@@ -85,21 +84,48 @@ const ChangeNameModal = () => {
             </button>
             <div className="px-6 py-6 lg:px-8">
               <h3 className="mb-4 text-xl font-medium text-gray-900 dark:text-white">
-                Modifica il tuo nome
+                Aggiungi commento
               </h3>
               <form className="space-y-6" action="#">
                 <div>
                   <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                    il tuo nome
+                    Commento
                   </label>
                   <input
                     type="text"
-                    name="name"
-                    value={myName}
-                    id="name"
+                    name="comment"
+                    value={myComment}
+                    id="comment"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                    placeholder={user.name}
-                    onChange={(e) => setMyName(e.target.value)}
+                    placeholder="Aggiungi commento"
+                    onChange={(e) => setMyComment(e.target.value)}
+                    required
+                  />
+                </div>
+                <h3 className="mb-4 text-xl font-medium text-gray-900 dark:text-white">
+                  Aggiungi Valutazione
+                </h3>
+
+                <div>
+                  <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    Valutazione
+                  </label>
+                  <input
+                    type="number"
+                    name="Valutation"
+                    value={myValutation}
+                    id="Valutation"
+                    min="1"
+                    max="10"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                    placeholder="Aggiungi valutazione"
+                    onChange={(e) => {
+                      const value = parseFloat(e.target.value); // Converti in numero
+                      if (!isNaN(value)) {
+                        // Verifica se è un numero valido
+                        setMyValutation(value);
+                      }
+                    }}
                     required
                   />
                 </div>
@@ -119,7 +145,7 @@ const ChangeNameModal = () => {
     </>
   );
 };
-export default ChangeNameModal;
+export default ModalPostReview;
 function setShow(arg0: boolean) {
   throw new Error("Function not implemented.");
 }

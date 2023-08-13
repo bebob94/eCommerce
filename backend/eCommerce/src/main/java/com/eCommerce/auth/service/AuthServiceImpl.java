@@ -3,6 +3,7 @@ package com.eCommerce.auth.service;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -10,6 +11,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.eCommerce.auth.entity.ERole;
 import com.eCommerce.auth.entity.Role;
@@ -20,6 +22,8 @@ import com.eCommerce.auth.payload.RegisterDto;
 import com.eCommerce.auth.repository.RoleRepository;
 import com.eCommerce.auth.repository.UserRepository;
 import com.eCommerce.auth.security.JwtTokenProvider;
+import com.eCommerce.server.entity.Image;
+import com.eCommerce.server.service.ImageService;
 
 
 @Service
@@ -31,6 +35,8 @@ public class AuthServiceImpl implements AuthService {
     private PasswordEncoder passwordEncoder;
     private JwtTokenProvider jwtTokenProvider;
 
+    @Autowired
+    ImageService imageService;
 
     public AuthServiceImpl(AuthenticationManager authenticationManager,
                            UserRepository userRepository,
@@ -97,6 +103,18 @@ public class AuthServiceImpl implements AuthService {
 
         return "User registered successfully!.";
     }
+    
+    public User updateUtenteImage(Long iduser, MultipartFile file) {
+    	  if(userRepository.existsById(iduser)) {
+    	  Image i = (Image) imageService.saveImage(file);
+    	  User u = userRepository.findById(iduser).get();
+    	  u.setImage(i.getUrl());
+    	  
+    	  return userRepository.save(u);}
+    	  else {
+    	   throw new MyAPIException(HttpStatus.NOT_FOUND, "utente non trovato");
+    	  }
+    	 }
     
     public ERole getRole(String role) {
     	if(role.equals("ADMIN")) return ERole.ROLE_ADMIN;

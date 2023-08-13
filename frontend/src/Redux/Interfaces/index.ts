@@ -98,3 +98,8 @@ export interface MyCart {
   allProducts: products[];
   quantity: number[];
 }
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< CART >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+export interface FormData {
+  file: File | null;
+}

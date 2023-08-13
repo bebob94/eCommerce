@@ -30,6 +30,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    @Column(length = 300000)
     private String image;
     @Column(nullable = false, unique = true)
     private String username;

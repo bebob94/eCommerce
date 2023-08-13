@@ -23,7 +23,7 @@ import org.springframework.core.io.Resource;
 
 @RestController
 @RequestMapping("/api/images")
-@CrossOrigin(origins = "http://localhost:3000", maxAge = 6000000)
+@CrossOrigin(origins = "http://localhost:3000", maxAge = 6000000, allowCredentials = "true")
 public class ImageController {
 	 @Autowired
 	  private ImageRepository imageRepository;

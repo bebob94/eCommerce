@@ -3,6 +3,10 @@ import { RootState } from "../../Redux/Store";
 import ChangeNameModal from "../Modals/ChangeNameModal";
 import { USER_BY_USERNAME, userByUsername } from "../../Redux/ActionType/User";
 import { useEffect } from "react";
+import ChangeEmailModal from "../Modals/ChangeEmailModal";
+import ChangeAddressModal from "../Modals/ChangeAddressModal";
+import ChangeImageModal from "../Modals/ChangeImageModal";
+import UploadUserProfileImage from "../Modals/ChangeImageModal";
 
 const Settings = () => {
   const dispatch = useDispatch();
@@ -39,9 +43,7 @@ const Settings = () => {
             <p>{User.email}</p>
           </div>
           <div>
-            <button className="mt-3 rounded-md shadow-lg  py-2 px-5 mr-3 border-black border-solid border-2">
-              modifica
-            </button>
+            <ChangeEmailModal />
           </div>
         </div>{" "}
         <hr />
@@ -57,9 +59,7 @@ const Settings = () => {
             </p>
           </div>
           <div>
-            <button className="mt-3 rounded-md shadow-lg  py-2 px-5 mr-3 border-black border-solid border-2">
-              modifica
-            </button>
+            <ChangeAddressModal />
           </div>
         </div>{" "}
         <hr />
@@ -73,9 +73,7 @@ const Settings = () => {
             />
           </div>
           <div>
-            <button className="mt-3 rounded-md shadow-lg  py-2 px-5 mr-3 border-black border-solid border-2">
-              modifica
-            </button>
+            <UploadUserProfileImage />
           </div>
         </div>{" "}
         <hr />

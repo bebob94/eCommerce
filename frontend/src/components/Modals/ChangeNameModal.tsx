@@ -1,9 +1,14 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../Redux/Store";
-import { changeMyProfileInfo } from "../../Redux/ActionType/User";
+import {
+  USER_BY_USERNAME,
+  changeMyProfileInfo,
+  userByUsername,
+} from "../../Redux/ActionType/User";
 
 const ChangeNameModal = () => {
+  const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const [myName, setMyName] = useState("");
   const user = useSelector((state: RootState) => state?.User.user);
@@ -23,6 +28,14 @@ const ChangeNameModal = () => {
       };
 
       const response = await changeMyProfileInfo(payload, User.accessToken);
+      (async () => {
+        let data = await userByUsername(User.username, User.accessToken);
+        dispatch({
+          type: USER_BY_USERNAME,
+          payload: data,
+        });
+      })();
+      setShow(false);
     } catch (error) {
       console.log(error);
     }

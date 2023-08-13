@@ -3,9 +3,7 @@ import { RootState } from "../../Redux/Store";
 import ChangeNameModal from "../Modals/ChangeNameModal";
 import { USER_BY_USERNAME, userByUsername } from "../../Redux/ActionType/User";
 import { useEffect } from "react";
-import ChangeEmailModal from "../Modals/ChangeEmailModal";
 import ChangeAddressModal from "../Modals/ChangeAddressModal";
-import ChangeImageModal from "../Modals/ChangeImageModal";
 import UploadUserProfileImage from "../Modals/ChangeImageModal";
 
 const Settings = () => {
@@ -30,7 +28,7 @@ const Settings = () => {
         <div className="my-6 flex justify-between items-center">
           <div>
             <p>Nome:</p>
-            <p>{User.name}</p>
+            <p>{User?.name}</p>
           </div>
           <div>
             <ChangeNameModal />
@@ -39,27 +37,17 @@ const Settings = () => {
         <hr />
         <div className="my-6 flex justify-between">
           <div>
-            <p>Email:</p>
-            <p>{User.email}</p>
-          </div>
-          <div>
-            <ChangeEmailModal />
-          </div>
-        </div>{" "}
-        <hr />
-        <div className="my-6 flex justify-between">
-          <div>
             <p>Indirizzo:</p>
             <p>
-              {myAddress.street +
+              {myAddress?.street +
                 " " +
-                myAddress.houseNumber +
+                myAddress?.houseNumber +
                 " " +
-                myAddress.city.toUpperCase()}
+                myAddress?.city?.toUpperCase()}
             </p>
           </div>
           <div>
-            <ChangeAddressModal />
+            <ChangeAddressModal addressId={myAddress.id} />
           </div>
         </div>{" "}
         <hr />

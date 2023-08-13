@@ -1,4 +1,4 @@
-import { newAddress } from "../Interfaces";
+import { address, newAddress } from "../Interfaces";
 
 export const ALL_ADDRESSES = "ALL_ADDRESSES";
 export const ADDRESS = "ADDRESS";
@@ -73,6 +73,22 @@ export const postAddress = async (
     console.log(error);
   }
 };
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< MODIFICA ADDRESS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+export const changeMyAddressInfo = async (params: address, token: String) => {
+  const requestOptions = await fetch(`http://localhost:8080/address`, {
+    method: "PUT",
+    headers: {
+      "Content-type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(params),
+  });
+};
+function RootState(a: unknown, b: unknown): boolean {
+  throw new Error("Function not implemented.");
+}
 
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< DELETE ADDRESS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 export const deleteAddress = async (id: number, token: String) => {

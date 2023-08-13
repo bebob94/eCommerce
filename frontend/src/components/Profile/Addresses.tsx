@@ -9,6 +9,7 @@ import {
   allAddressesByUser,
   deleteAddress,
 } from "../../Redux/ActionType/address";
+import ChangeAddressModal from "../Modals/ChangeAddressModal";
 
 const Addresses = () => {
   const dispatch = useDispatch();
@@ -53,6 +54,17 @@ const Addresses = () => {
 
   useEffect(() => {
     (async () => {
+      if (Addresses) {
+        let data = await addressById(Addresses[0].id, user.accessToken);
+        console.log(data);
+
+        dispatch({
+          type: ADDRESS,
+          payload: data,
+        });
+      }
+    })();
+    (async () => {
       let data = await allAddressesByUser(user.accessToken, User.id);
       dispatch({
         type: ALL_ADDRESSES,
@@ -67,7 +79,7 @@ const Addresses = () => {
 
       <div className="grid grid-cols-3 gap-4 text-gray-400">
         <Link to={"/newAddress"} className="cursor-pointer">
-          <div className="border-2 h-72  border-gray-400 border-dashed text-center">
+          <div className="border-2 h-80  border-gray-400 border-dashed text-center">
             <p className="text-9xl mt-5">+</p>
             <p className="text-2xl ">Aggiungi indirizzo</p>
           </div>
@@ -75,7 +87,7 @@ const Addresses = () => {
         {Addresses?.map((address) => (
           <div
             key={address.id}
-            className="border-2 h-72 w-full  border-gray-400 border-solid  text-black"
+            className="border-2 h-80 w-full  border-gray-400 border-solid  text-black"
           >
             {address.id === singleAddress.id ? (
               <div className="flex mx-2 py-3 border-b-2 border-solid border-gray-400">
@@ -92,7 +104,15 @@ const Addresses = () => {
                 </Link>
               </div>
             ) : (
-              ""
+              <div className="flex mx-2 py-3 border-b-2 border-solid border-gray-400">
+                <button
+                  className="text-blue-700 "
+                  onClick={() => handleChange(address.id)}
+                >
+                  {" "}
+                  Imposta come predefinito
+                </button>
+              </div>
             )}
             <p className="text-2xl mt-5 ml-5 text-center font-semibold">
               {User?.name}
@@ -109,27 +129,15 @@ const Addresses = () => {
             <p className="text-sm mt-5 ml-5 font-semibold">
               Indirizzo: {address.street} {address.houseNumber}
             </p>
-            <div className="felx justify-between mt-3 ml-5">
-              <button className="text-blue-700 mr-3">Modifica</button>|
+            <div className="flex justify-evenly mt-3 ">
+              <ChangeAddressModal addressId={address.id} />
               <button
-                className="text-blue-700 mx-3"
+                className=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 onClick={() => handleDelete(address.id)}
               >
                 {" "}
                 Rimuovi
               </button>{" "}
-              |
-              {address.id !== singleAddress.id ? (
-                <button
-                  className="text-blue-700 "
-                  onClick={() => handleChange(address.id)}
-                >
-                  {" "}
-                  Imposta come predefinito
-                </button>
-              ) : (
-                ""
-              )}
             </div>
           </div>
         ))}

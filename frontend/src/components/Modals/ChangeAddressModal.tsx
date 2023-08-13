@@ -1,12 +1,24 @@
 import { useMemo, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../Redux/Store";
-import { changeMyProfileInfo } from "../../Redux/ActionType/User";
+import {
+  USER_BY_USERNAME,
+  changeMyProfileInfo,
+  userByUsername,
+} from "../../Redux/ActionType/User";
 import { address } from "../../Redux/Interfaces";
 import Select, { ActionMeta } from "react-select";
 import countryList from "react-select-country-list";
+import {
+  ADDRESS,
+  ALL_ADDRESSES,
+  addressById,
+  allAddressesByUser,
+  changeMyAddressInfo,
+} from "../../Redux/ActionType/address";
 
-const ChangeAddressModal = () => {
+const ChangeAddressModal = ({ addressId }: { addressId: number }) => {
+  const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const [state, setState] = useState<string>("Seleziona uno stato");
   const [city, setCity] = useState<string>("");
@@ -23,8 +35,8 @@ const ChangeAddressModal = () => {
 
   const handleSubmit = async () => {
     try {
-      const addressPayload: address = {
-        id: Address.id,
+      const payload: address = {
+        id: addressId,
         state,
         city,
         street,
@@ -33,15 +45,21 @@ const ChangeAddressModal = () => {
         cap,
       };
 
-      const payload = {
-        id: user.id,
-        name: user.name,
-        image: user.image,
-        indirizzo: [addressPayload],
-        email: user.email,
-      };
+      const response = await changeMyAddressInfo(payload, User.accessToken);
+      (async () => {
+        let data = await addressById(addressId, User.accessToken);
+        dispatch({
+          type: ADDRESS,
+          payload: data,
+        });
+        let data2 = await allAddressesByUser(User.accessToken, User.id);
+        dispatch({
+          type: ALL_ADDRESSES,
+          payload: data2,
+        });
+      })();
 
-      const response = await changeMyProfileInfo(payload, User.accessToken);
+      setShow(false);
     } catch (error) {
       console.log(error);
     }
@@ -64,7 +82,7 @@ const ChangeAddressModal = () => {
       <button
         data-modal-target="ChangeName-modal"
         data-modal-toggle="ChangeName-modal"
-        className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        className=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         type="button"
         onClick={handleShow}
       >
@@ -168,7 +186,13 @@ const ChangeAddressModal = () => {
                       placeholder="Numero civico"
                       required
                       value={houseNumber}
-                      onChange={(e) => setHouseNumber(parseInt(e.target.value))}
+                      onChange={(e) => {
+                        const value = parseFloat(e.target.value); // Converti in numero
+                        if (!isNaN(value)) {
+                          // Verifica se è un numero valido
+                          setHouseNumber(value);
+                        }
+                      }}
                     />
                   </span>{" "}
                   <span>
@@ -201,6 +225,3 @@ const ChangeAddressModal = () => {
   );
 };
 export default ChangeAddressModal;
-function setShow(arg0: boolean) {
-  throw new Error("Function not implemented.");
-}

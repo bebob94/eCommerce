@@ -16,6 +16,7 @@ import {
   allAddressesByUser,
   changeMyAddressInfo,
 } from "../../Redux/ActionType/address";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 const ChangeAddressModal = ({ addressId }: { addressId: number }) => {
   const dispatch = useDispatch();
@@ -75,6 +76,8 @@ const ChangeAddressModal = ({ addressId }: { addressId: number }) => {
   const changeHandler = (selectedOption: any, actionMeta: ActionMeta<any>) => {
     setState((selectedOption as { label: string; value: string }).value);
   };
+
+  const isAboveLarge = useMediaQuery("(min-width: 800px)");
 
   return (
     <>
@@ -197,6 +200,7 @@ const ChangeAddressModal = ({ addressId }: { addressId: number }) => {
                   <span>
                     <p className="mb-1 font-semibold">Cap</p>
                     <input
+                      className="w-11/12 ss:w-full"
                       type="text"
                       id="cap"
                       autoComplete="off"

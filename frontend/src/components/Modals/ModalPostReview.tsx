@@ -113,7 +113,7 @@ const ModalPostReview = ({ productId }: { productId: number }) => {
                   <input
                     type="number"
                     name="Valutation"
-                    value={myValutation}
+                    value={myValutation.toString()}
                     id="Valutation"
                     min="1"
                     max="10"

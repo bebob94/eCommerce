@@ -94,8 +94,8 @@ const Navbar = () => {
             <div className="flex items-center justify-between ">
               <Link to={"/Cart"} className="cursor-pointer m-0">
                 {" "}
-                <div className="flex items-center font-serif font-medium mr-8">
-                  Carrello{" "}
+                <div className="flex  items-center font-serif font-medium mr-8">
+                  <p className="hidden ss:block">Carrello</p>
                   <img
                     src={carrello}
                     alt="carrello"

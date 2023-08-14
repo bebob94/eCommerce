@@ -16,6 +16,7 @@ import {
 import { Link } from "react-router-dom";
 import { products } from "../../Redux/Interfaces";
 import ModalPostReview from "../Modals/ModalPostReview";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 const Product = () => {
   const dispatch = useDispatch();
@@ -127,13 +128,19 @@ const Product = () => {
     return `${startDay} - ${endDay} ${month}`;
   };
 
+  const isAboveLarge = useMediaQuery("(min-width: 1060px)");
+
   return (
-    <div className="flex pt-10 justify-between mx-auto bg-white  h-screen ">
-      <div className="w-2/5 h-52 flex justify-center">
-        <img src={product.image} alt={product.name} className="  w-96 h-96" />
+    <div className="md:flex md:pt-10 justify-between mx-auto bg-white  h-screen ">
+      <div className="md:w-2/5 h-52 md:flex justify-center">
+        <img
+          src={product.image}
+          alt={product.name}
+          className="mt-5 ss:mt-0 mx-auto md:w-96 md:h-96"
+        />
       </div>
 
-      <div className=" ml-8 mt-5 w-2/5 text-left">
+      <div className=" ml-8 md:mt-5 md:w-2/5 md:text-left">
         <div className="font-playfair font-bold text-3xl">{product.name}</div>
         <div className="font-serif font-medium text-xl mt-3">
           {product.description}
@@ -180,62 +187,119 @@ const Product = () => {
           </div>
         </div>
       </div>
+      {isAboveLarge ? (
+        <div
+          className="m-5 pl-5 pt-3 font-serif shadow-sm shadow-slate-500 rounded-md w-1/5 mt-8"
+          style={{ border: "1px solid grey" }}
+        >
+          <span>
+            <p> Nuovo</p>
+            <p>{product.price}€</p>
+          </span>
+          <p className="mt-4 text-sm">Consegna senza costi aggiuntivi</p>
+          <p className="text-xs mt-2">
+            {formatDateRange(
+              todayDate,
+              new Date(todayDate.getTime() + 4 * 24 * 60 * 60 * 1000)
+            )}
+          </p>
+          <div className="flex mt-5">
+            <img src={position} alt="position" className="h-5" />
+            <Link to={"/Addresses"}>
+              <p className="text-xs mt-1 ml-3 cursor-pointer text-blue-500 hover:text-red-500">
+                {" "}
+                invia a {`${user.username} - ${address?.city} ${address?.cap} `}
+              </p>
+            </Link>
+          </div>
 
-      <div
-        className="m-5 pl-5 pt-3 font-serif shadow-sm shadow-slate-500 rounded-md w-1/5 mt-8"
-        style={{ border: "1px solid grey" }}
-      >
-        <span>
-          <p> Nuovo</p>
-          <p>{product.price}€</p>
-        </span>
-        <p className="mt-4 text-sm">Consegna senza costi aggiuntivi</p>
-        <p className="text-xs mt-2">
-          {formatDateRange(
-            todayDate,
-            new Date(todayDate.getTime() + 4 * 24 * 60 * 60 * 1000)
-          )}
-        </p>
-        <div className="flex mt-5">
-          <img src={position} alt="position" className="h-5" />
-          <Link to={"/Addresses"}>
-            <p className="text-xs mt-1 ml-3 cursor-pointer text-blue-500 hover:text-red-500">
-              {" "}
-              invia a {`${user.username} - ${address?.city} ${address?.cap} `}
+          <p className="mt-5 mb-2 text-xl text-green-700">
+            Disponibilità immediata
+          </p>
+          <span>
+            Quantità:
+            <select
+              name="quantity"
+              autoComplete="off"
+              id="quantity"
+              tabIndex={0}
+              className="border-2 border-solid border-black ml-3 rounded-md"
+              onChange={(e) => setMyQuantity(parseInt(e.target.value))}
+            >
+              {quantityOption.map((quantity) => (
+                <option key={quantity} value={quantity}>
+                  {quantity}
+                </option>
+              ))}
+            </select>{" "}
+          </span>
+          <div className="flex justify-center mt-10">
+            <button
+              onClick={(e) => addToCart(product, myQuantity)}
+              type="button"
+              className="text-white h-10 w-40 bg-orange-500 hover:bg-orange-800 focus:outline-none focus:ring-4 focus:ring-orange-300 font-medium rounded-full text-sm  text-center mr-2 mb-2 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-900"
+            >
+              Aggiungi al carrello
+            </button>
+          </div>
+        </div>
+      ) : (
+        <div
+          className="m-5 mb-10 pl-5 pt-3 font-serif shadow-sm shadow-slate-500 rounded-md  mt-8"
+          style={{ border: "1px solid grey" }}
+        >
+          <span>
+            <p> Nuovo {product.price}€</p>
+            <p className="  text-sm">Consegna senza costi aggiuntivi</p>
+          </span>
+
+          <div className="flex mt-5">
+            <img src={position} alt="position" className="h-5 " />
+            <Link to={"/Addresses"}>
+              <p className="text-xs mt-2 ml-3 cursor-pointer text-blue-500 hover:text-red-500">
+                {" "}
+                invia a {`${user.username} - ${address?.city} ${address?.cap} `}
+              </p>
+            </Link>
+            <p className="text-xs ml-10 mt-2">
+              {formatDateRange(
+                todayDate,
+                new Date(todayDate.getTime() + 4 * 24 * 60 * 60 * 1000)
+              )}
             </p>
-          </Link>
-        </div>
+          </div>
 
-        <p className="mt-5 mb-2 text-xl text-green-700">
-          Disponibilità immediata
-        </p>
-        <span>
-          Quantità:
-          <select
-            name="quantity"
-            autoComplete="off"
-            id="quantity"
-            tabIndex={0}
-            className="border-2 border-solid border-black ml-3 rounded-md"
-            onChange={(e) => setMyQuantity(parseInt(e.target.value))}
-          >
-            {quantityOption.map((quantity) => (
-              <option key={quantity} value={quantity}>
-                {quantity}
-              </option>
-            ))}
-          </select>{" "}
-        </span>
-        <div className="flex justify-center mt-10">
-          <button
-            onClick={(e) => addToCart(product, myQuantity)}
-            type="button"
-            className="text-white h-10 w-40 bg-orange-500 hover:bg-orange-800 focus:outline-none focus:ring-4 focus:ring-orange-300 font-medium rounded-full text-sm  text-center mr-2 mb-2 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-900"
-          >
-            Aggiungi al carrello
-          </button>
+          <p className="mt-5 mb-2 text-xl text-green-700">
+            Disponibilità immediata
+          </p>
+          <span>
+            Quantità:
+            <select
+              name="quantity"
+              autoComplete="off"
+              id="quantity"
+              tabIndex={0}
+              className="border-2 border-solid border-black ml-3 rounded-md"
+              onChange={(e) => setMyQuantity(parseInt(e.target.value))}
+            >
+              {quantityOption.map((quantity) => (
+                <option key={quantity} value={quantity}>
+                  {quantity}
+                </option>
+              ))}
+            </select>{" "}
+          </span>
+          <div className="flex justify-center mt-10">
+            <button
+              onClick={(e) => addToCart(product, myQuantity)}
+              type="button"
+              className="text-white h-10 w-40 bg-orange-500 hover:bg-orange-800 focus:outline-none focus:ring-4 focus:ring-orange-300 font-medium rounded-full text-sm  text-center mr-2 mb-2 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-900"
+            >
+              Aggiungi al carrello
+            </button>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

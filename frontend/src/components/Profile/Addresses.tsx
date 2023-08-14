@@ -74,20 +74,20 @@ const Addresses = () => {
   }, []);
 
   return (
-    <div className="mt-10 mx-40 ">
+    <div className="mt-10 ss:mx-40 ">
       <p className="text-4xl font-medium  w-full mb-8"> I miei Indirizzi</p>
 
-      <div className="grid grid-cols-3 gap-4 text-gray-400">
+      <div className="ss:grid ss:grid-cols-3 ss:gap-4 text-gray-400 ">
         <Link to={"/newAddress"} className="cursor-pointer">
-          <div className="border-2 h-80  border-gray-400 border-dashed text-center">
-            <p className="text-9xl mt-5">+</p>
+          <div className="border-2 h-80  border-gray-400 border-dashed text-center mb-10 ss:mb-0">
+            <p className="text-9xl mt-16">+</p>
             <p className="text-2xl ">Aggiungi indirizzo</p>
           </div>
         </Link>
         {Addresses?.map((address) => (
           <div
             key={address.id}
-            className="border-2 h-80 w-full  border-gray-400 border-solid  text-black"
+            className="border-2 h-80 w-full  border-gray-400 border-solid  text-black mb-10 ss:mb-0"
           >
             {address.id === singleAddress.id ? (
               <div className="flex mx-2 py-3 border-b-2 border-solid border-gray-400">

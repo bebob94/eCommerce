@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   return (
-    <div className="mt-10 mx-40">
+    <div className="mt-10 ss:mx-40 text-center">
       <p className="text-4xl font-medium w-full mb-8"> Il mio account</p>
-      <div className="flex justify-between">
+      <div className="ss:flex ss:justify-between">
         <Link
           to={"/"}
-          className="block max-w-xs p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+          className="block ss:max-w-xs mb-10 p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
         >
           <h5 className="mb-2 font-opensans text-xl font-bold tracking-tight text-gray-900 dark:text-white">
             I miei ordini
@@ -18,7 +18,7 @@ const Dashboard = () => {
         </Link>
         <Link
           to={"/Addresses"}
-          className="block max-w-xs p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+          className="block ss:max-w-xs mb-10 p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
         >
           <h5 className="mb-2 font-opensans text-xl font-bold tracking-tight text-gray-900 dark:text-white">
             Indirizzi
@@ -30,7 +30,7 @@ const Dashboard = () => {
         </Link>
         <Link
           to={"/"}
-          className="block max-w-xs p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+          className="block ss:max-w-xs p-6 mb-10 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
         >
           <h5 className="mb-2 font-opensans text-xl font-bold tracking-tight text-gray-900 dark:text-white">
             I miei pagamenti

@@ -24,13 +24,13 @@ const Settings = () => {
   return (
     <div className="m-10  h-full ">
       <p className="text-4xl text-center font-medium  ">Utente</p>
-      <div className="w-1/2 bg-white rounded-md my-5 mx-auto shadow-md p-3">
+      <div className="ss:w-1/2 bg-white rounded-md my-5 mx-auto shadow-md p-3">
         <div className="my-6 flex justify-between items-center">
           <div>
             <p>Nome:</p>
             <p>{User?.name}</p>
           </div>
-          <div>
+          <div className="flex items-center">
             <ChangeNameModal />
           </div>
         </div>{" "}
@@ -38,7 +38,7 @@ const Settings = () => {
         <div className="my-6 flex justify-between">
           <div>
             <p>Indirizzo:</p>
-            <p>
+            <p className="w-5/6 ss:w-full">
               {myAddress?.street +
                 " " +
                 myAddress?.houseNumber +
@@ -46,7 +46,7 @@ const Settings = () => {
                 myAddress?.city?.toUpperCase()}
             </p>
           </div>
-          <div>
+          <div className="flex items-center">
             <ChangeAddressModal addressId={myAddress.id} />
           </div>
         </div>{" "}
@@ -60,7 +60,7 @@ const Settings = () => {
               alt="user photo"
             />
           </div>
-          <div>
+          <div className="flex items-center">
             <UploadUserProfileImage />
           </div>
         </div>{" "}

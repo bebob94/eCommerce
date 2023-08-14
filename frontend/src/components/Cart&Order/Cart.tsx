@@ -1,15 +1,19 @@
 import { useDispatch, useSelector } from "react-redux";
 import {
   EMPTY_CART,
+  PRODUCT_BY_ID,
   REMOVE_FROM_CART,
   UPDATE_QUANTITY,
+  productById,
 } from "../../Redux/ActionType/products";
 import { RootState } from "../../Redux/Store";
 import { products } from "../../Redux/Interfaces";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const dispatch = useDispatch();
 
+  const User = useSelector((state: RootState) => state?.user.user);
   const cart = useSelector((state: RootState) => state?.cart);
   const calculateTotal = () => {
     const total = cart.allProducts.reduce((acc, product, i) => {
@@ -30,15 +34,23 @@ const Cart = () => {
     }
   };
 
+  const handleClick = async (id: Number) => {
+    let data = await productById(id, User.accessToken);
+    dispatch({
+      type: PRODUCT_BY_ID,
+      payload: data,
+    });
+  };
+
   const emptyCart = () => {
     dispatch({ type: EMPTY_CART });
     alert("Carrello svuotato!");
   };
 
   return (
-    <div className="m-5 h-screen flex justify-between">
+    <div className="m-5 h-full md:flex justify-between">
       {cart.allProducts.length > 0 ? (
-        <div className="w-3/4">
+        <div className="md:w-3/4">
           <p className="text-4xl font-medium  w-full ">Carrello</p>
           <p
             className="text-blue-600 text-sm cursor-pointer"
@@ -51,15 +63,26 @@ const Cart = () => {
               key={product?.id}
               className="bg-white rounded-md my-5 shadow-md  flex"
             >
-              <img
-                className="rounded-md mr-5"
-                src={product?.image}
-                alt={product?.name}
-              />
+              <Link
+                to={`/product/${product.id}`}
+                onClick={() => handleClick(product?.id)}
+              >
+                <img
+                  className="rounded-md mr-5"
+                  src={product?.image}
+                  alt={product?.name}
+                />
+              </Link>
               <div>
-                <p className="mt-5  text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                  {product?.name}
-                </p>
+                <Link
+                  to={`/product/${product.id}`}
+                  onClick={() => handleClick(product?.id)}
+                >
+                  {" "}
+                  <p className="mt-5  text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                    {product?.name}
+                  </p>
+                </Link>
                 <p className="mt-5 w-2/3 bg-blue-100 text-blue-800 text-xs font-semibold   py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ">
                   {product?.description}
                 </p>
@@ -103,7 +126,7 @@ const Cart = () => {
       ) : (
         <p className="text-4xl font-medium  w-full ">Carrello vuoto</p>
       )}
-      <div className="w-1/5 bg-white mt-16 rounded-md h-52">
+      <div className="md:w-1/5 bg-white md:mt-16 rounded-md  md:h-52">
         <p className="mt-5 mx-2 font-mono font-semibold text-md">
           Totale provvisorio ({cart.allProducts.length} articoli):
         </p>

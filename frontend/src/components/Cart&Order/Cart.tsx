@@ -61,25 +61,25 @@ const Cart = () => {
           {cart.allProducts.map((product, i) => (
             <div
               key={product?.id}
-              className="bg-white rounded-md my-5 shadow-md  flex"
+              className="bg-white rounded-md my-3 shadow-md  flex"
             >
               <Link
                 to={`/product/${product.id}`}
                 onClick={() => handleClick(product?.id)}
               >
                 <img
-                  className="rounded-md mr-5"
+                  className="rounded-md mr-5 mt-3"
                   src={product?.image}
                   alt={product?.name}
                 />
               </Link>
-              <div>
+              <div className="ml-3">
                 <Link
                   to={`/product/${product.id}`}
                   onClick={() => handleClick(product?.id)}
                 >
                   {" "}
-                  <p className="mt-5  text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                  <p className="mt-3  text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                     {product?.name}
                   </p>
                 </Link>
@@ -113,7 +113,7 @@ const Cart = () => {
                 </div>
                 <div>
                   <p
-                    className=" my-3 cursor-pointer text-blue-600"
+                    className=" mb-3 cursor-pointer text-blue-600"
                     onClick={(e) => deleteProduct(product)}
                   >
                     Rimuovi

@@ -21,7 +21,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import com.eCommerce.auth.security.JwtAuthenticationEntryPoint;
 import com.eCommerce.auth.security.JwtAuthenticationFilter;
-
+import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
 @EnableMethodSecurity
@@ -54,15 +54,16 @@ public class SecurityConfig {
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
-    	http.cors().and().csrf().disable()
-        .authorizeHttpRequests((authorize) -> authorize
-        		.requestMatchers(HttpMethod.GET, "/api/**").permitAll()
-                .requestMatchers("/api/auth/**").permitAll()
-                .anyRequest().authenticated())
-        .exceptionHandling( exception -> exception
-                .authenticationEntryPoint(authenticationEntryPoint)
-        ).sessionManagement( session -> session
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+        http.cors(withDefaults()).csrf(csrf -> csrf.disable())
+                .authorizeHttpRequests((authorize) -> authorize
+                        .requestMatchers(HttpMethod.GET, "/api/").permitAll()
+                        .requestMatchers("/api/auth/").permitAll()
+                        .requestMatchers("user").authenticated()
+                        .anyRequest().authenticated())
+                .exceptionHandling(exception -> exception
+                                .authenticationEntryPoint(authenticationEntryPoint)
+                ).sessionManagement(session -> session
+                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
         );
 
     	http.addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);

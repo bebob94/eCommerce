@@ -74,7 +74,7 @@ const Home = () => {
       <p className="text-2xl font-semibold mt-5 mx-5">Some categories...</p>
       {user?.username ? (
         <div className="md:flex md:justify-between mx-5 ">
-          <div className="md:w-1/3 mt-5 p-3 mb-5  flex flex-wrap justify-between bg-white shadow-md shadow-black rounded-md">
+          <div className="md:w-1/3  mt-5 p-3 mb-5  flex flex-wrap justify-between bg-white shadow-md shadow-black rounded-md">
             <p className="text-xl font-medium w-full mb-3">Eletronics:</p>
             {products
               ?.filter((product) => product?.category === "ELECTRONICS")
